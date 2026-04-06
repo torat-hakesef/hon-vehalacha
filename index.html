@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הון והלכה | כלכלה יהודית מודרנית</title>
+    <style>
+        :root { --blue: #1a3c5e; --gold: #d4af37; --light: #f4f7f6; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--light); margin: 0; color: #333; line-height: 1.6; }
+        header { background: linear-gradient(135deg, var(--blue) 0%, #122a42 100%); color: white; padding: 50px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
+        nav { background: white; padding: 15px; text-align: center; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100; }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--blue); font-weight: bold; }
+        .container { display: flex; flex-wrap: wrap; padding: 20px; max-width: 1100px; margin: auto; gap: 20px; }
+        .main { flex: 3; min-width: 300px; }
+        .sidebar { flex: 1; min-width: 280px; }
+        .card { background: white; padding: 25px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-right: 5px solid var(--gold); }
+        h2 { color: var(--blue); margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #eee; padding: 12px; text-align: center; }
+        th { background: var(--blue); color: white; }
+        .contact-box { background: var(--blue); color: white; padding: 20px; border-radius: 12px; }
+        input { width: 90%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none; }
+        .btn { background: var(--gold); color: white; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>הון והלכה 💰📜</h1>
+    <p>שוק ההון, פנסיה וניהול הון בראי התורה</p>
+</header>
+
+<nav>
+    <a href="#about">אודות</a>
+    <a href="#funds">קרנות כשרות</a>
+    <a href="#contact">יצירת קשר</a>
+</nav>
+
+<div class="container">
+    <div class="main">
+        <section id="about" class="card">
+            <h2>השקעות כשרות בשנת 2026</h2>
+            <p>ברוכים הבאים לפורטל המוביל לכלכלה הלכתית. כאן תוכלו למצוא מידע עדכני על מסלולי השקעה, פנסיה וגמל תחת פיקוח הלכתי הדוק. המטרה שלנו היא לאפשר לכל יהודי לצמוח כלכלית מבלי להתפשר על קוצו של יו"ד.</p>
+        </section>
+
+        <section id="funds" class="card">
+            <h2>טבלת קרנות סל (ETF) בפיקוח</h2>
+            <table>
+                <tr>
+                    <th>שם הקרן</th>
+                    <th>גוף כשרות</th>
+                    <th>מספר נייר</th>
+                </tr>
+                <tr>
+                    <td>S&P 500 אינפיניטי</td>
+                    <td>גלאט הון</td>
+                    <td>1159250</td>
+                </tr>
+                <tr>
+                    <td>מגדל MTF כשרה</td>
+                    <td>תשואה כהלכה</td>
+                    <td>1183441</td>
+                </tr>
+            </table>
+        </section>
+    </div>
+
+    <aside class="sidebar">
+        <div class="contact-box" id="contact">
+            <h3>סוכן ביטוח כשר</h3>
+            <p>השאר פרטים לבדיקת התיק הפנסיוני שלך:</p>
+            <input type="text" placeholder="שם מלא">
+            <input type="tel" placeholder="טלפון">
+            <button class="btn" onclick="alert('הפרטים נשלחו בהצלחה!')">חזור אליי</button>
+        </div>
+    </aside>
+</div>
+
+</body>
+</html>

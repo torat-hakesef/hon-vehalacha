@@ -11,37 +11,41 @@
         nav { background: var(--white); padding: 15px; text-align: center; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100; }
         nav a { margin: 0 15px; text-decoration: none; color: var(--blue); font-weight: bold; }
         .container { display: flex; flex-wrap: wrap; padding: 20px; max-width: 1200px; margin: auto; gap: 20px; }
-        .main { flex: 3; background: white; padding: 30px; border-radius: 12px; border-right: 6px solid var(--gold); }
-        .sidebar { flex: 1; }
+        .main { flex: 3; background: white; padding: 30px; border-radius: 12px; border-right: 6px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .info-box { background: #fdf2f2; border-right: 4px solid #c0392b; padding: 15px; margin: 20px 0; font-size: 0.95rem; }
+        .sidebar { flex: 1; min-width: 250px; }
         .sidebar-box { background: var(--blue); color: white; padding: 20px; border-radius: 12px; }
-        .red-title { color: #c0392b; font-weight: bold; font-size: 1.2rem; }
+        .alert-text { color: #c0392b; font-weight: bold; font-size: 1.2rem; }
         footer { text-align: center; padding: 20px; background: #333; color: #ccc; margin-top: 50px; }
     </style>
 </head>
 <body>
 <header><h1>הון והלכה</h1></header>
-<nav>
-    <a href="index.html">🏠 דף הבית</a>
-    <a href="index.html#articles">📚 מאמרים</a>
-</nav>
+<nav><a href="index.html">🏠 חזרה לדף הבית</a></nav>
 <div class="container">
     <div class="main">
-        <h1>למה בכלל צריך "מסלול כשר"?</h1>
-        <p class="red-title">מוכר בשר וחלב? בעלים של חילול שבת?</p>
-        <p>דמיינו ששואלים אברך בכולל פוניבז' אם הוא שותף במסעדה המגישה בשר וחלב... האמת היא שמי שמשקיע ללא פיקוח עלול למצוא את עצמו בדיוק שם דרך המניות שלו.</p>
+        <h1>למה בכלל צריך "מסלול כשר"? – עיקרי הבעיות ההלכתיות</h1>
+        <p><strong>מאת: מערכת "הון והלכה"</strong></p>
+
+        <div class="info-box">
+            <strong>הבהרה:</strong> מאמר זה נועד להציג את הצורך בפיקוח הלכתי בשוק ההון. הנתונים מובאים להמחשת הבעיות העקרוניות ואינם מהווים פסיקת הלכה פרטנית.
+        </div>
+
+        <p class="alert-text">מוכר בשר וחלב? בעלים של חילול שבת?</p>
+        <p>דמיינו ששואלים אברך בכולל פוניבז' אם הוא שותף במסעדה המגישה בשר וחלב ומוכרת חמץ שעבר עליו הפסח. האמת היא שמי שמשקיע ללא פיקוח עלול למצוא את עצמו בדיוק שם דרך הבעלות שלו במניות של חברות ענק.</p>
         
-        <h3>נקודות החיכוך המרכזיות:</h3>
+        <h3>עיקרי הבעיות ההלכתיות:</h3>
         <ul>
-            <li><strong>שבת:</strong> שותפות ברווחים מחברות הפועלות בשבת קודש.</li>
-            <li><strong>ריבית:</strong> הלוואות בריבית ללא היתר עסקה תקף.</li>
-            <li><strong>איסורי הנאה:</strong> חמץ שעבר עליו הפסח, נבלות וטרפות ותערובות בשר וחלב.</li>
+            <li><strong>שותפות בחילול שבת:</strong> בעלות על חברות המפעילות שירותים וחנויות בשבת קודש.</li>
+            <li><strong>איסור ריבית:</strong> הלוואה לחברות (אג"ח) ללא היתר עסקה.</li>
+            <li><strong>חמץ ואיסורי הנאה:</strong> בעלות על מלאי חמץ בפסח או תערובות בשר וחלב האסורות בהנאה.</li>
         </ul>
-        <p>לכן, חובה להשתמש בשיטת ה-<strong>Screening (סינון)</strong> ההלכתית המנקה את התיק מאיסורים.</p>
+        <p>הפתרון הוא מסלול כשר המשתמש בסינון (Screening) אקטיבי כדי לנקות את תיק ההשקעות מאיסורים אלו.</p>
     </div>
     <aside class="sidebar">
         <div class="sidebar-box">
-            <h3>מאמרים נוספים</h3>
-            <a href="article-mavo.html" style="color:white; text-decoration:none;">• מבוא לשוק ההון</a>
+            <h3>עוד בנושא</h3>
+            <a href="article-mavo.html" style="color:var(--gold); text-decoration:none; font-weight:bold;">📚 מבוא לשוק ההון >></a>
         </div>
     </aside>
 </div>

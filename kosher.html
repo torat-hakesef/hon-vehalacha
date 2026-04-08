@@ -5,51 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>למה צריך מסלול כשר? | הון והלכה</title>
     <style>
-        :root { --blue: #1a3c5e; --gold: #d4af37; --light: #f4f7f6; --white: #ffffff; }
-        body { font-family: 'Segoe UI', sans-serif; background: var(--light); margin: 0; color: #333; line-height: 1.8; text-align: right; }
-        header { background: var(--blue); color: white; padding: 25px; text-align: center; border-bottom: 5px solid var(--gold); }
-        nav { background: var(--white); padding: 15px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        :root { --blue: #1a3c5e; --gold: #d4af37; --teal: #00c4cc; --light: #f4f7f6; --white: #ffffff; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--light); margin: 0; color: #333; line-height: 1.8; text-align: right; }
+        header { background: var(--blue); color: white; padding: 30px; text-align: center; border-bottom: 5px solid var(--gold); }
+        nav { background: var(--white); padding: 15px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         nav a { margin: 0 15px; text-decoration: none; color: var(--blue); font-weight: bold; }
-        .container { max-width: 900px; margin: 40px auto; background: white; padding: 40px; border-radius: 12px; border-right: 8px solid var(--gold); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .container { display: flex; flex-wrap: wrap; padding: 30px 20px; max-width: 1200px; margin: auto; gap: 25px; }
+        .main { flex: 3; background: white; padding: 40px; border-radius: 12px; border-right: 8px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .sidebar { flex: 1; min-width: 250px; }
+        .sidebar-box { background: var(--blue); color: white; padding: 20px; border-radius: 12px; }
         .info-box { background: #fdf2f2; border-right: 4px solid #c0392b; padding: 20px; margin: 25px 0; border-radius: 4px; }
-        .alert-text { color: #c0392b; font-weight: bold; font-size: 1.3rem; margin-bottom: 20px; display: block; }
-        h3 { color: var(--blue); border-bottom: 2px solid #eee; padding-bottom: 5px; }
-        footer { text-align: center; padding: 20px; background: #333; color: #ccc; margin-top: 50px; }
+        .red-alert { color: #c0392b; font-weight: bold; font-size: 1.4rem; margin-bottom: 20px; display: block; }
+        h1, h3 { color: var(--blue); }
+        footer { text-align: center; padding: 30px; background: #333; color: #ccc; margin-top: 50px; }
     </style>
 </head>
 <body>
 <header><h1>הון והלכה</h1></header>
-<nav><a href="index.html">🏠 חזרה לדף הבית</a> <a href="mavo.html">📚 מבוא לשוק ההון</a></nav>
+<nav>
+    <a href="index.html">🏠 דף הבית</a>
+    <a href="index.html#articles">📚 מאמרים</a>
+    <a href="mavo.html">📊 מבוא לשוק ההון</a>
+</nav>
 <div class="container">
-    <h1>למה בכלל צריך "מסלול כשר"? – עיקרי הבעיות ההלכתיות</h1>
-    <p><strong>מאת: מערכת "הון והלכה"</strong></p>
-    
-    <div class="info-box">
-        <strong>הבהרה:</strong> מאמר זה נועד להציג את הצורך בפיקוח הלכתי בשוק ההון. הנתונים מובאים להמחשת הבעיות העקרוניות ואינם מהווים פסיקת הלכה פרטנית.
+    <div class="main">
+        <h1>למה בכלל צריך "מסלול כשר"? – עיקרי הבעיות ההלכתיות</h1>
+        <p><strong>מאת: מערכת "הון והלכה"</strong></p>
+        <div class="info-box">
+            <strong>הבהרה:</strong> מאמר זה נועד להציג את הצורך בפיקוח הלכתי בשוק ההון. הנתונים מובאים להמחשת הבעיות העקרוניות ואינם מהווים פסיקת הלכה פרטנית.
+        </div>
+        
+        <span class="red-alert">מוכר בשר וחלב? בעלים של חילול שבת?</span>
+        
+        <p>דמיינו ששואלים אברך בכולל פוניבז': "האם ייתכן שאתה שותף בבעלות על מסעדה המגישה בשר וחלב, מאכילה יהודים בנבלות וטרפות, ומוכרת חמץ שעבר עליו הפסח?". סביר להניח שהוא יזדעזע.</p>
+        <p><strong>אבל האמת היא שמי שמשקיע ללא פיקוח הלכתי, הופך לבעלים של חברות ענק שעושות בדיוק את זה.</strong></p>
+
+        <h3>1. בעיית השותפות בחילול שבת</h3>
+        <p>כאשר אדם קונה מניות, הוא הופך לבעלים חלקי בחברה. אם החברה מפעילה חנויות או מפעלים בשבת, המשקיע הופך לשותף ברווחים המופקים מחילול שבת.</p>
+
+        <h3>2. איסור ריבית</h3>
+        <p>חברות רבות מגייסות כספים דרך אגרות חוב (אג"ח). ללא היתר עסקה תקף, המשקיע עובר על איסור ריבית דאורייתא או דרבנן בכל יום שהכסף נושא רווח.</p>
+
+        <h3>3. בעלות על חמץ ואיסורי הנאה</h3>
+        <p>החזקת מניות בחברות המייצרות או מוכרות חמץ בפסח, נבלות וטרפות, או תערובות בשר וחלב האסורות בהנאה מהתורה, מעמידה את המשקיע במצב של בעלות על דברים אסורים.</p>
+
+        <p><strong>לסיכום:</strong> המסלול הכשר אינו "הידור" אלא צורך בסיסי למי שרוצה שהכסף שלו לא יהיה מעורב באיסורים חמורים.</p>
     </div>
-
-    <span class="alert-text">מוכר בשר וחלב? בעלים של חילול שבת?</span>
-    
-    <p>דמיינו ששואלים אברך בכולל פוניבז': "האם ייתכן שאתה שותף בבעלות על מסעדה המגישה בשר וחלב, מאכילה יהודים בנבלות וטרפות, ומוכרת חמץ שעבר עליו הפסח?". סביר להניח שהוא יזדעזע מעצם השאלה.</p>
-    
-    <p>או דמיינו שאומרים לאשת ראש ישיבה שהיא בעלים של רשת מלונות המפעילה חילולי שבת המוניים בפרהסיה ואיסורים נוספים. היא ודאי תכחיש זאת מכל וכל.</p>
-    
-    <p><strong>אבל האמת המרה היא, שמי שמשקיע במסלולים ללא פיקוח הלכתי הדוק, עלול למצוא את עצמו בדיוק בסיטואציות האלו – דרך בעלות על מניות וניירות ערך של חברות הענק הנסחרות בבורסה.</strong></p>
-
-    <h3>א. בעיית השותפות בחילול שבת</h3>
-    <p>כאשר אדם קונה מניות של חברה, הוא הופך לבעלים חלקי. אם החברה מפעילה מפעלים, מרכזי שירות או חנויות בשבת, נמצא שהמשקיע שותף ברווחים שנוצרו מחילול שבת.</p>
-
-    <h3>ב. ריבית – הבעלים עובר על האיסור</h3>
-    <p>חברות רבות מגייסות כספים באמצעות הנפקת אגרות חוב (אג"ח). כיוון שהמשקיע הוא הבעלים של החוב, הוא עצמו עובר על איסור ריבית אם אין לחברה מנגנון "היתר עסקה" תקף.</p>
-
-    <h3>ג. בעלות על חמץ ואיסורי הנאה</h3>
-    <ul>
-        <li><strong>חמץ:</strong> החזקת מניות בחברות המחזיקות חמץ בפסח.</li>
-        <li><strong>מאכלות אסורים:</strong> שותפות בחברות המייצרות או מוכרות נבלות וטרפות.</li>
-        <li><strong>בשר וחלב:</strong> בעלות על חברות המייצרות תערובות בשר וחלב האסורות בהנאה מהתורה.</li>
-    </ul>
-
-    <p>לכן, חובה להשתמש בשיטת ה-<strong>Screening (סינון)</strong> ההלכתית המנקה את התיק מאיסורים אלו ומאפשרת להשקיע בראש שקט.</p>
+    <aside class="sidebar">
+        <div class="sidebar-box">
+            <h3>עוד בפורטל</h3>
+            <p><a href="mavo.html" style="color:var(--gold); text-decoration:none;">• מבוא לשוק ההון</a></p>
+        </div>
+    </aside>
 </div>
 <footer>&copy; 2026 הון והלכה</footer>
 </body>

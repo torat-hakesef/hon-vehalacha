@@ -16,16 +16,32 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light); margin: 0; color: #333; line-height: 1.6; }
         
         header { 
-            background: linear-gradient(rgba(26, 60, 94, 0.9), rgba(18, 42, 66, 0.9)), 
+            background: linear-gradient(rgba(26, 60, 94, 0.92), rgba(18, 42, 66, 0.92)), 
                         url('https://www.transparenttextures.com/patterns/cubes.png');
             background-color: var(--blue);
             color: white; 
             padding: 60px 20px; 
             text-align: center; 
             border-bottom: 5px solid var(--gold);
+            position: relative;
+            overflow: hidden;
         }
 
-        .header-container { display: flex; align-items: center; justify-content: center; gap: 20px; }
+        /* אלמנטים של שוק ההון ומטבעות ברקע */
+        header::before {
+            content: "₪ $ 📈 € 📊 £ 📉 ₿ ¥";
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 100%;
+            opacity: 0.08;
+            font-size: 1.8rem;
+            letter-spacing: 40px;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .header-container { display: flex; align-items: center; justify-content: center; gap: 20px; position: relative; z-index: 1; }
         .main-title { font-size: 3.5rem; margin: 0; font-weight: 800; }
         
         .stamp-circle {
@@ -41,7 +57,7 @@
         }
         .stamp-circle span { color: var(--gold); font-weight: bold; font-size: 1rem; line-height: 1.1; }
 
-        header p { font-size: 1.4rem; opacity: 0.9; max-width: 700px; margin: 20px auto 0; }
+        header p { font-size: 1.4rem; opacity: 0.9; max-width: 700px; margin: 20px auto 0; position: relative; z-index: 1; }
 
         nav { background: var(--white); padding: 15px; text-align: center; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100; }
         nav a { margin: 0 20px; text-decoration: none; color: var(--blue); font-weight: bold; }
@@ -53,18 +69,22 @@
         .card { background: var(--white); padding: 25px; margin-bottom: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-right: 6px solid var(--gold); }
         h2 { color: var(--blue); margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px; }
         
-        /* עיצוב המאמרים */
         .article-block { border-bottom: 2px dashed #eee; padding-bottom: 20px; margin-bottom: 20px; }
         .article-block:last-child { border-bottom: none; }
-        .read-more-link { color: var(--teal); font-weight: bold; text-decoration: none; display: inline-block; margin-top: 10px; border: 1px solid var(--teal); padding: 5px 12px; border-radius: 4px; transition: 0.3s; }
+        
+        .read-more-link { 
+            color: var(--teal); font-weight: bold; text-decoration: none; display: inline-block; 
+            margin-top: 10px; border: 1px solid var(--teal); padding: 6px 15px; border-radius: 4px; 
+            transition: 0.3s; font-size: 0.9rem;
+        }
         .read-more-link:hover { background: var(--teal); color: white; }
 
-        /* קוביות מסלולים - סידור מיוחד */
+        /* קוביות מסלולים - סידור 3-3-1 */
         .tracks-section { text-align: center; margin-top: 20px; }
         .tracks-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 15px; }
         .track-item { 
             background: #fff; border: 1px solid #ddd; padding: 15px; border-radius: 8px; 
-            font-weight: bold; color: var(--blue); width: 180px; text-align: center;
+            font-weight: bold; color: var(--blue); width: 200px; text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
@@ -108,13 +128,13 @@
             <div class="article-block">
                 <h3>למה בכלל צריך "מסלול כשר"? – עיקרי הבעיות ההלכתיות</h3>
                 <p><strong>מוכר בשר וחלב? בעלים של חילול שבת?</strong> דמיינו ששואלים אברך בכולל פוניבז' אם הוא שותף במסעדה המגישה נבלות וטרפות. האמת היא שמי שמשקיע ללא פיקוח עלול למצוא את עצמו בדיוק שם...</p>
-                <a href="kosher-investing.html" target="_blank" class="read-more-link">לקריאת המאמר המלא בחלון חדש >></a>
+                <a href="kosher-investing.html" target="_blank" class="read-more-link">למאמר המלא >></a>
             </div>
 
             <div class="article-block">
                 <h3>מבוא לשוק ההון – כל מה שצריך לדעת כדי להתחיל</h3>
-                <p><strong>הבהרה:</strong> מאמר זה נועד לספק רקע כללי בלבד על מבנה השוק. שוק ההון הוא המקום שבו חברות שזקוקות לכסף פוגשות אנשים שרוצים להשקיע ולהשיג תשואה...</p>
-                <p>ניתן לסחור במניות, אג"ח, מדדים וקרנות סל. לרוב הפוסקים קניית מניה היא שותפות בעסק, בעוד אג"ח נחשב הלוואה בריבית לרוב השיטות.</p>
+                <p>שוק ההון הוא המקום שבו חברות שזקוקות לכסף פוגשות אנשים שרוצים להשקיע ולהשיג תשואה. ניתן לסחור במניות, אג"ח, מדדים וקרנות סל. מה הן המשמעויות ההלכתיות של כל אחד מהם?</p>
+                <a href="mavo.html" target="_blank" class="read-more-link">למאמר המלא >></a>
             </div>
         </section>
 
@@ -122,15 +142,17 @@
             <h2>מסלולים ואפיקים כשרים - בקרוב</h2>
             <div class="tracks-section">
                 <div class="tracks-row">
-                    <div class="track-item">1. מדדים בארץ</div>
-                    <div class="track-item">2. מדדים ארה"ב</div>
-                    <div class="track-item">3. מדדים עולמיים</div>
-                    <div class="track-item">4. קרנות כספיות</div>
+                    <div class="track-item">מדדים בארץ</div>
+                    <div class="track-item">מדדים ארה"ב</div>
+                    <div class="track-item">מדדים עולמיים</div>
                 </div>
                 <div class="tracks-row">
-                    <div class="track-item">5. קרנות סל אג"ח</div>
-                    <div class="track-item">6. אג"ח קונצרני כשר</div>
-                    <div class="track-item">7. קרנות פנסיה והשתלמות</div>
+                    <div class="track-item">קרנות כספיות</div>
+                    <div class="track-item">קרנות סל אג"ח</div>
+                    <div class="track-item">אג"ח קונצרני כשר</div>
+                </div>
+                <div class="tracks-row">
+                    <div class="track-item">קרנות פנסיה והשתלמות</div>
                 </div>
             </div>
         </section>
@@ -141,17 +163,9 @@
             <h3>רשימת מאמרים</h3>
             <ul>
                 <li><a href="kosher-investing.html" target="_blank">• למה צריך מסלול כשר?</a></li>
-                <li><a href="#articles">• מבוא לשוק ההון</a></li>
+                <li><a href="mavo.html" target="_blank">• מבוא לשוק ההון</a></li>
                 <li><a href="#">• היתר עסקה (בקרוב)</a></li>
                 <li><a href="#">• מעשר כספים (בקרוב)</a></li>
-            </ul>
-        </div>
-        <div class="sidebar-box" style="background:var(--gold); color:var(--blue);">
-            <h3>מסלולים בקרוב</h3>
-            <ul style="font-size: 0.8rem;">
-                <li>📉 מדדים בארץ וארה"ב</li>
-                <li>💰 קרנות כספיות ואג"ח</li>
-                <li>👵 פנסיה, גמל והשתלמות</li>
             </ul>
         </div>
     </aside>

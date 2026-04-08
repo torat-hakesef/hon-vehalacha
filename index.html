@@ -3,181 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>הון והלכה | כלכלה כשרה למהדרין</title>
+    <title>הון והלכה | דף הבית</title>
     <style>
-        :root { 
-            --blue: #1a3c5e; 
-            --gold: #d4af37; 
-            --teal: #00c4cc; 
-            --light: #f4f7f6; 
-            --white: #ffffff;
-        }
-        
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light); margin: 0; color: #333; line-height: 1.6; }
-        
+        :root { --blue: #1a3c5e; --gold: #d4af37; --teal: #00c4cc; --light: #f4f7f6; --white: #ffffff; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--light); margin: 0; color: #333; line-height: 1.6; }
         header { 
-            background: linear-gradient(rgba(26, 60, 94, 0.92), rgba(18, 42, 66, 0.92)), 
-                        url('https://www.transparenttextures.com/patterns/cubes.png');
-            background-color: var(--blue);
-            color: white; 
-            padding: 60px 20px; 
-            text-align: center; 
-            border-bottom: 5px solid var(--gold);
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(rgba(26, 60, 94, 0.92), rgba(18, 42, 66, 0.92)), url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-color: var(--blue); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--gold); position: relative;
         }
-
-        /* אלמנטים של שוק ההון ומטבעות ברקע */
-        header::before {
-            content: "₪ $ 📈 € 📊 £ 📉 ₿ ¥";
-            position: absolute;
-            top: 15px;
-            left: 0;
-            width: 100%;
-            opacity: 0.08;
-            font-size: 1.8rem;
-            letter-spacing: 40px;
-            white-space: nowrap;
-            pointer-events: none;
-        }
-
-        .header-container { display: flex; align-items: center; justify-content: center; gap: 20px; position: relative; z-index: 1; }
-        .main-title { font-size: 3.5rem; margin: 0; font-weight: 800; }
-        
-        .stamp-circle {
-            width: 90px; height: 90px;
-            border: 3px solid var(--gold);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            text-align: center;
-            transform: rotate(-10deg);
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            padding: 5px;
-        }
-        .stamp-circle span { color: var(--gold); font-weight: bold; font-size: 1rem; line-height: 1.1; }
-
-        header p { font-size: 1.4rem; opacity: 0.9; max-width: 700px; margin: 20px auto 0; position: relative; z-index: 1; }
-
+        header::before { content: "₪ $ 📈 € 📊 £ 📉 ₿ ¥"; position: absolute; top: 10px; left: 0; width: 100%; opacity: 0.1; font-size: 1.5rem; letter-spacing: 30px; white-space: nowrap; pointer-events: none; }
         nav { background: var(--white); padding: 15px; text-align: center; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100; }
-        nav a { margin: 0 20px; text-decoration: none; color: var(--blue); font-weight: bold; }
-
-        .container { display: flex; flex-wrap: wrap; padding: 30px 20px; max-width: 1200px; margin: auto; gap: 25px; }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--blue); font-weight: bold; }
+        .container { display: flex; flex-wrap: wrap; padding: 20px; max-width: 1200px; margin: auto; gap: 20px; }
         .main { flex: 3; min-width: 300px; }
         .sidebar { flex: 1; min-width: 250px; }
-
         .card { background: var(--white); padding: 25px; margin-bottom: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-right: 6px solid var(--gold); }
-        h2 { color: var(--blue); margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        
-        .article-block { border-bottom: 2px dashed #eee; padding-bottom: 20px; margin-bottom: 20px; }
-        .article-block:last-child { border-bottom: none; }
-        
-        .read-more-link { 
-            color: var(--teal); font-weight: bold; text-decoration: none; display: inline-block; 
-            margin-top: 10px; border: 1px solid var(--teal); padding: 6px 15px; border-radius: 4px; 
-            transition: 0.3s; font-size: 0.9rem;
-        }
-        .read-more-link:hover { background: var(--teal); color: white; }
-
-        /* קוביות מסלולים - סידור 3-3-1 */
-        .tracks-section { text-align: center; margin-top: 20px; }
-        .tracks-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 15px; }
-        .track-item { 
-            background: #fff; border: 1px solid #ddd; padding: 15px; border-radius: 8px; 
-            font-weight: bold; color: var(--blue); width: 200px; text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
+        .read-more-link { color: var(--teal); font-weight: bold; text-decoration: none; border: 1px solid var(--teal); padding: 5px 12px; border-radius: 4px; display: inline-block; margin-top: 10px; }
+        .tracks-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .track-item { background: #fff; border: 1px solid #ddd; padding: 12px; border-radius: 8px; font-weight: bold; width: 180px; text-align: center; font-size: 0.9rem; }
         .sidebar-box { background: var(--blue); color: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; }
-        .sidebar-box h3 { color: var(--gold); margin: 0 0 15px 0; border-bottom: 1px solid rgba(255,255,255,0.2); }
-        .sidebar-box ul { list-style: none; padding: 0; margin: 0; }
-        .sidebar-box li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .sidebar-box a { color: #fff; text-decoration: none; font-size: 0.9rem; }
-
-        footer { background: #333; color: #ccc; padding: 30px; text-align: center; font-size: 0.85rem; margin-top: 40px; }
+        .sidebar-box h3 { color: var(--gold); margin-top: 0; border-bottom: 1px solid rgba(255,255,255,0.2); }
+        footer { text-align: center; padding: 20px; background: #333; color: #ccc; font-size: 0.8rem; }
     </style>
 </head>
 <body>
-
-<header>
-    <div class="header-container">
-        <h1 class="main-title">הון והלכה</h1>
-        <div class="stamp-circle">
-            <span>כלכלה<br>מהדרין</span>
-        </div>
-    </div>
-    <p>שוק ההון, חסכונות, פנסיה והשקעות ע"פ ההלכה</p>
-</header>
-
+<header><h1>הון והלכה</h1><p>שוק ההון והשקעות ע"פ ההלכה</p></header>
 <nav>
-    <a href="#about">אודות</a>
-    <a href="#articles">מאמרים</a>
-    <a href="#tracks">מסלולים כשרים</a>
+    <a href="index.html">🏠 דף הבית</a>
+    <a href="#articles">📚 מאמרים</a>
+    <a href="#tracks">📊 מסלולים כשרים</a>
 </nav>
-
 <div class="container">
     <div class="main">
-        <section id="about" class="card">
-            <h2>אודות</h2>
-            <p>ברוכים הבאים לפורטל המוביל לכלכלה ע"פ ההלכה. כאן תוכלו למצוא מידע עדכני ומאמרים על מסלולי השקעה, פנסיה וגמל תחת פיקוח הלכתי הדוק. המטרה שלנו היא לאפשר לכל יהודי לצמוח כלכלית מבלי להתפשר על קוצו של יו"ד.</p>
-        </section>
-
         <section id="articles" class="card">
-            <h2>מאמרים</h2>
-            
-            <div class="article-block">
-                <h3>למה בכלל צריך "מסלול כשר"? – עיקרי הבעיות ההלכתיות</h3>
-                <p><strong>מוכר בשר וחלב? בעלים של חילול שבת?</strong> דמיינו ששואלים אברך בכולל פוניבז' אם הוא שותף במסעדה המגישה נבלות וטרפות. האמת היא שמי שמשקיע ללא פיקוח עלול למצוא את עצמו בדיוק שם...</p>
-                <a href="kosher-investing.html" target="_blank" class="read-more-link">למאמר המלא >></a>
+            <h2>מאמרים אחרונים</h2>
+            <div style="margin-bottom:30px; border-bottom:1px dashed #eee; padding-bottom:20px;">
+                <h3>למה בכלל צריך "מסלול כשר"?</h3>
+                <p>האם ייתכן שאתה מוכר בשר וחלב או שותף לחילול שבת דרך המניות שלך? גלה את המשמעויות ההלכתיות...</p>
+                <a href="article-kosher.html" class="read-more-link">למאמר המלא >></a>
             </div>
-
-            <div class="article-block">
-                <h3>מבוא לשוק ההון – כל מה שצריך לדעת כדי להתחיל</h3>
-                <p>שוק ההון הוא המקום שבו חברות שזקוקות לכסף פוגשות אנשים שרוצים להשקיע ולהשיג תשואה. ניתן לסחור במניות, אג"ח, מדדים וקרנות סל. מה הן המשמעויות ההלכתיות של כל אחד מהם?</p>
-                <a href="mavo.html" target="_blank" class="read-more-link">למאמר המלא >></a>
+            <div>
+                <h3>מבוא לשוק ההון – המדריך למתחיל</h3>
+                <p>איך עובדת הבורסה, מה זה מניות ואג"ח ומהן הנקודות ההלכתיות שחובה להכיר לפני שמשקיעים שקל אחד...</p>
+                <a href="article-mavo.html" class="read-more-link">למאמר המלא >></a>
             </div>
         </section>
-
         <section id="tracks" class="card">
-            <h2>מסלולים ואפיקים כשרים - בקרוב</h2>
-            <div class="tracks-section">
-                <div class="tracks-row">
-                    <div class="track-item">מדדים בארץ</div>
-                    <div class="track-item">מדדים ארה"ב</div>
-                    <div class="track-item">מדדים עולמיים</div>
-                </div>
-                <div class="tracks-row">
-                    <div class="track-item">קרנות כספיות</div>
-                    <div class="track-item">קרנות סל אג"ח</div>
-                    <div class="track-item">אג"ח קונצרני כשר</div>
-                </div>
-                <div class="tracks-row">
-                    <div class="track-item">קרנות פנסיה והשתלמות</div>
-                </div>
-            </div>
+            <h2>מסלולים כשרים - בקרוב</h2>
+            <div class="tracks-row"><div class="track-item">מדדים בארץ</div><div class="track-item">מדדים ארה"ב</div><div class="track-item">מדדים עולמיים</div></div>
+            <div class="tracks-row"><div class="track-item">קרנות כספיות</div><div class="track-item">קרנות סל אג"ח</div><div class="track-item">אג"ח קונצרני</div></div>
+            <div class="tracks-row"><div class="track-item">פנסיה והשתלמות</div></div>
         </section>
     </div>
-
     <aside class="sidebar">
         <div class="sidebar-box">
-            <h3>רשימת מאמרים</h3>
-            <ul>
-                <li><a href="kosher-investing.html" target="_blank">• למה צריך מסלול כשר?</a></li>
-                <li><a href="mavo.html" target="_blank">• מבוא לשוק ההון</a></li>
-                <li><a href="#">• היתר עסקה (בקרוב)</a></li>
-                <li><a href="#">• מעשר כספים (בקרוב)</a></li>
+            <h3>מאמרים נבחרים</h3>
+            <ul style="list-style:none; padding:0;">
+                <li><a href="article-kosher.html" style="color:white; text-decoration:none;">• למה צריך מסלול כשר?</a></li><br>
+                <li><a href="article-mavo.html" style="color:white; text-decoration:none;">• מבוא לשוק ההון</a></li>
             </ul>
         </div>
     </aside>
 </div>
-
-<footer>
-    <div style="max-width: 800px; margin: auto; line-height: 1.5;">
-        <strong>הבהרה משפטית:</strong> התוכן באתר זה מוגש למטרות אינפורמטיביות בלבד ואינו מהווה ייעוץ השקעות. השקעה בשוק ההון נושאת סיכון להפסד כספי. יש להיוועץ עם סמכות רלוונטית לפני כל פעולה.
-    </div>
-    <br>
-    &copy; 2026 הון והלכה | כלכלה כשרה למהדרין
-</footer>
-
+<footer>&copy; 2026 הון והלכה</footer>
 </body>
 </html>

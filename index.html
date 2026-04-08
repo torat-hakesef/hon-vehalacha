@@ -6,94 +6,117 @@
     <title>הון והלכה | כלכלה כשרה למהדרין</title>
     <style>
         :root { 
-            --blue: #1a3c5e; 
-            --gold: #d4af37; 
-            --light: #f4f7f6; 
+            --blue: #1a3c5e; /* כחול כהה מקצועי */
+            --gold: #d4af37; /* זהב יוקרתי */
+            --teal: #00c4cc; /* טורקיז חי למשיכת עין */
+            --light: #f4f7f6; /* רקע בהיר וביתי */
             --white: #ffffff;
         }
         
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light); margin: 0; color: #333; line-height: 1.6; }
         
+        /* עיצוב כותרת עליונה עם רקע סימני מטבעות */
         header { 
-            background: linear-gradient(rgba(26, 60, 94, 0.9), rgba(18, 42, 66, 0.9)), 
-                        url('https://www.transparenttextures.com/patterns/cubes.png');
+            background: linear-gradient(rgba(26, 60, 94, 0.92), rgba(18, 42, 66, 0.92)), 
+                        url('https://www.transparenttextures.com/patterns/cubes.png'); /* תבנית נקייה ומודרנית */
             background-color: var(--blue);
             color: white; 
-            padding: 80px 20px; 
+            padding: 60px 20px; 
             text-align: center; 
             border-bottom: 5px solid var(--gold);
             position: relative;
             overflow: hidden;
         }
 
+        /* יצירת אפקט מטבעות רקע עדין */
         header::before {
             content: "$ € ₪ £ ¥ 📈 ₿";
             position: absolute;
             top: 10px;
             left: 0;
             width: 100%;
-            opacity: 0.1;
+            opacity: 0.07;
             font-size: 2rem;
             letter-spacing: 50px;
             white-space: nowrap;
         }
 
-        .logo-container { margin-bottom: 20px; }
+        /* לוגו מודרני בעיצוב חותמת */
+        .logo-stamp {
+            display: inline-block;
+            border: 4px double var(--gold);
+            border-radius: 50%;
+            padding: 20px 30px;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.03);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
         .main-title { 
-            font-size: 4rem; 
+            font-size: 3.5rem; 
             margin: 0; 
             font-weight: 800; 
             letter-spacing: -1px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        .seal-kosher {
-            display: inline-block;
-            border: 2px solid var(--gold);
             color: var(--gold);
-            padding: 2px 10px;
-            border-radius: 50px;
-            font-size: 1rem;
-            vertical-align: middle;
-            margin-right: 15px;
-            transform: rotate(-10deg);
-            font-weight: bold;
-            background: rgba(212, 175, 55, 0.1);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            display: block;
         }
 
-        header p { font-size: 1.4rem; opacity: 0.9; max-width: 700px; margin: 20px auto 0; }
+        .seal-kosher-text {
+            color: var(--teal); /* צבע חי ומושך */
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 5px 0;
+            display: block;
+            letter-spacing: 2px;
+        }
+
+        .site-url {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            font-family: monospace;
+            display: block;
+        }
+
+        header p { font-size: 1.3rem; opacity: 0.9; max-width: 700px; margin: 20px auto 0; color: white; }
 
         nav { background: var(--white); padding: 15px; text-align: center; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100; }
-        nav a { margin: 0 20px; text-decoration: none; color: var(--blue); font-weight: bold; transition: 0.3s; }
-        nav a:hover { color: var(--gold); }
+        nav a { margin: 0 20px; text-decoration: none; color: var(--blue); font-weight: bold; transition: 0.3s; font-size: 1.1rem; }
+        nav a:hover { color: var(--teal); }
 
         .container { display: flex; flex-wrap: wrap; padding: 30px 20px; max-width: 1100px; margin: auto; gap: 30px; }
-        .main { flex: 3; min-width: 300px; }
-        .sidebar { flex: 1; min-width: 280px; }
+        .main { flex: 1; min-width: 300px; }
         
         .card { background: var(--white); padding: 30px; margin-bottom: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-right: 6px solid var(--gold); }
-        h2 { color: var(--blue); margin-top: 0; font-size: 1.8rem; }
+        h2 { color: var(--blue); margin-top: 0; font-size: 1.8rem; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h3 { color: var(--blue); margin-top: 25px; }
         
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         th, td { border: 1px solid #eee; padding: 15px; text-align: center; }
-        th { background: var(--blue); color: white; }
-        
-        .contact-box { background: var(--blue); color: white; padding: 25px; border-radius: 15px; text-align: center; }
-        input { width: calc(100% - 24px); padding: 12px; margin: 10px 0; border-radius: 8px; border: none; outline: none; }
-        .btn { background: var(--gold); color: white; padding: 15px 20px; border: none; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold; font-size: 1.1rem; transition: 0.3s; }
-        .btn:hover { background: #b8972f; transform: translateY(-2px); }
+        th { background: var(--teal); color: white; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+
+        .article-block p { margin-bottom: 15px; }
+        .article-block strong { color: var(--blue); }
+
+        footer { background: #333; color: #ccc; padding: 40px 20px; text-align: center; font-size: 0.85rem; margin-top: 50px; }
+        .legal-text { max-width: 800px; margin: auto; line-height: 1.4; }
 
         @media (max-width: 768px) {
-            .main-title { font-size: 2.5rem; }
-            header::before { font-size: 1.2rem; letter-spacing: 20px; }
+            .main-title { font-size: 2.2rem; }
+            header p { font-size: 1.1rem; }
+            .logo-stamp { padding: 15px 20px; }
+            nav a { margin: 0 10px; font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo-container">
+    <div class="logo-stamp">
         <span class="main-title">הון והלכה</span>
-        <div class="seal-kosher">מהדרין 📜</div>
+        <span class="seal-kosher-text">מהדרין</span>
+        <span class="site-url">torat-hakesef.github.io/hon-vehalacha/</span>
     </div>
     <p>שוק ההון, חסכונות, פנסיה והשקעות ע"פ ההלכה</p>
 </header>
@@ -102,53 +125,73 @@
     <a href="#about">אודות</a>
     <a href="#articles">מאמרים</a>
     <a href="#funds">קרנות כשרות</a>
-    <a href="#contact">יצירת קשר</a>
 </nav>
 
 <div class="container">
     <div class="main">
         <section id="about" class="card">
-            <h2>השקעות כשרות בשנת 2026</h2>
+            <h2>ברוכים הבאים</h2>
             <p>ברוכים הבאים לפורטל המוביל לכלכלה ע"פ ההלכה. כאן תוכלו למצוא מידע עדכני ומאמרים על מסלולי השקעה, פנסיה וגמל תחת פיקוח הלכתי הדוק. המטרה שלנו היא לאפשר לכל יהודי לצמוח כלכלית מבלי להתפשר על קוצו של יו"ד.</p>
         </section>
 
         <section id="articles" class="card">
             <h2>מאמרים אחרונים</h2>
-            <p>בקרוב יעלו כאן מדריכים מפורטים על עולם ההשקעות ההלכתי.</p>
+            <div class="article-block">
+                <h3>מבוא לשוק ההון – כל מה שצריך לדעת כדי להתחיל</h3>
+                <p><strong>הבהרה:</strong> מאמר זה נועד לספק רקע כללי בלבד על מבנה השוק. לא נעסוק כאן במורכבויות ובפתרונות ההלכתיים הפרטניים לכל מכשיר, אלא רק בנגיעה כללית בנקודות הממשק עם ההלכה (להרחבה בנושאים אלו, ראה מאמרים ייעודיים באתר).</p>
+                
+                <p>שוק ההון עשוי להיראות במבט ראשון כמו עולם מורכב של מספרים ומסכים, אך ביסודו הוא פשוט מאוד: זהו המקום שבו חברות שזקוקות לכסף כדי לצמוח פוגשות אנשים (כמונו) שיש להם כסף פנוי ורוצים להשקיע אותו כדי להשיג תשואה.</p>
+                
+                <p>המסחר מתנהל ב**בורסה**. בישראל זו "הבורסה לניירות ערך בתל אביב", ובארה"ב אלו בורסות הענק כמו ה-NYSE (בורסת ניו יורק) וה-NASDAQ (נאסד"ק). המסחר היום הוא דיגיטלי לחלוטין ומתבצע דרך הבנק או דרך ברוקרים (חברי בורסה).</p>
+
+                <p><strong>מה נסחר בשוק ההון?</strong></p>
+                <ul>
+                    <li><strong>מניות:</strong> קניית "חלק" מחברה. לרוב הפוסקים קניית מניה היא שותפות בעסק.</li>
+                    <li><strong>אגרות חוב (אג"ח):</strong> הלוואה לממשלה או לחברה. מבחינה הלכתית: זוהי הלוואה בריבית לרוב השיטות.</li>
+                    <li><strong>מדדים:</strong> "סל" של חברות שעוקב אחרי מדד מסוים (כמו S&P 500).</li>
+                    <li><strong>קרנות סל (ETF) וקרנות נאמנות:</strong> כלים המאפשרים לקנות קבוצה גדולה של ניירות ערך בבת אחת, תחת פיקוח הלכתי המסנן ומכשיר מניות ומסלולי השקעה.</li>
+                    <li><strong>קרנות כספיות:</strong> מכשיר השקעה בסיכון נמוך מאוד. דינן כהלוואה בריבית לרוב השיטות (בדומה לאג"ח).</li>
+                    <li><strong>סחורות ומטבעות:</strong> חשיפה לערך של זהב, נפט, דולר, אירו או מטבעות דיגיטליים דרך ניירות ערך עוקבים.</li>
+                    <li><strong>נגזרים וכלים נוספים:</strong> אופציות, חוזים עתידיים, כתבי אופציה וכלים פיננסיים מורכבים.</li>
+                </ul>
+
+                <p>היום עומדים לרשות המשקיעים שומרי התורה מסלולים מובנים הפועלים תחת פיקוח הדוק. מסלולים אלו בודקים עבורנו שאין חשש ריבית, חילול שבת או בעלות אסורה בחברות שאינן עומדות בגדרי ההלכה.</p>
+            </div>
         </section>
 
         <section id="funds" class="card">
             <h2>טבלת קרנות סל (ETF) בפיקוח</h2>
             <table>
-                <tr>
-                    <th>שם הקרן</th>
-                    <th>גוף כשרות</th>
-                    <th>מספר נייר</th>
-                </tr>
-                <tr>
-                    <td>S&P 500 אינפיניטי</td>
-                    <td>גלאט הון</td>
-                    <td>1159250</td>
-                </tr>
-                <tr>
-                    <td>מגדל MTF כשרה</td>
-                    <td>תשואה כהלכה</td>
-                    <td>1183441</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>שם הקרן</th>
+                        <th>גוף כשרות</th>
+                        <th>מספר נייר</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>S&P 500 אינפיניטי</td>
+                        <td>גלאט הון</td>
+                        <td>1159250</td>
+                    </tr>
+                    <tr>
+                        <td>מגדל MTF כשרה</td>
+                        <td>תשואה כהלכה</td>
+                        <td>1183441</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
     </div>
-
-    <aside class="sidebar">
-        <div class="contact-box" id="contact">
-            <h3>סוכן ביטוח כשר</h3>
-            <p>השאר פרטים לבדיקת התיק הפנסיוני שלך:</p>
-            <input type="text" placeholder="שם מלא">
-            <input type="tel" placeholder="טלפון">
-            <button class="btn" onclick="alert('הפרטים נשלחו בהצלחה!')">חזור אליי</button>
-        </div>
-    </aside>
 </div>
+
+<footer>
+    <div class="legal-text">
+        <strong>הבהרה משפטית:</strong> התוכן באתר זה מוגש למטרות אינפורמטיביות בלבד ואינו מהווה ייעוץ השקעות, המלצה לפעולה בניירות ערך, או תחליף לייעוץ מקצועי המותאם לצרכיו האישיים של כל אדם. השקעה בשוק ההון נושאת סיכון להפסד כספי. המערכת אינה אחראית לכל נזק שייגרם כתוצאה מהסתמכות על המידע באתר. בכל נושא הלכתי או פיננסי, יש להיוועץ עם סמכות רלוונטית.
+    </div>
+    <p>&copy; 2026 הון והלכה - כל הזכויות שמורות</p>
+</footer>
 
 </body>
 </html>

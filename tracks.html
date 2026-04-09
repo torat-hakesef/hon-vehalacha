@@ -3,97 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S&P 500 כשר - רשימת מסלולים | הון והלכה</title>
+    <title>S&P 500 כשר | הון והלכה</title>
     <style>
         :root { --blue: #1a3c5e; --gold: #d4af37; --light: #f4f7f6; --white: #ffffff; --teal: #008080; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--light); margin: 0; color: #333; line-height: 1.6; }
-        header { background: var(--blue); color: white; padding: 30px; text-align: center; border-bottom: 5px solid var(--gold); }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
         
-        .update-box { background: #e3f2fd; border-right: 5px solid var(--blue); padding: 15px; margin-bottom: 25px; border-radius: 5px; }
-        
-        .kosher-policy-link { background: #fff3cd; padding: 15px; border-radius: 8px; border: 1px solid #ffeeba; margin-bottom: 20px; text-align: center; }
-        .kosher-policy-link a { color: #856404; font-weight: bold; text-decoration: underline; }
+        header { background: var(--blue); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
+        .logo-seal { width: 80px; height: 80px; border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-weight: bold; color: var(--gold); line-height: 1.2; font-size: 0.9rem; }
 
-        .method-box { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px; }
-        .method-header { font-size: 1.2rem; font-weight: bold; color: var(--blue); border-bottom: 2px solid var(--gold); padding-bottom: 5px; margin-bottom: 15px; }
+        nav { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; }
+        nav a { padding: 15px 20px; text-decoration: none; color: var(--blue); font-weight: bold; }
+
+        .container { max-width: 1000px; margin: 20px auto; padding: 0 20px; }
         
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; background: white; }
-        th { background: #eee; padding: 12px; text-align: right; font-size: 0.9rem; }
-        td { padding: 10px; border-bottom: 1px solid #eee; font-size: 0.9rem; }
-        
-        .tag-swap { color: #d32f2f; font-weight: bold; } /* גופים שלא מאשרים מניות */
-        .tag-filter { color: #2e7d32; font-weight: bold; } /* גופים שמסננים */
-        .coming-soon { color: #999; font-style: italic; background: #f9f9f9; padding: 40px; text-align: center; border-radius: 10px; margin-top: 20px; }
+        .section-header { background: var(--blue); color: var(--gold); padding: 12px; border-radius: 5px; margin: 30px 0 15px; font-weight: bold; font-size: 1.2rem; }
+        .method-label { color: var(--teal); font-weight: bold; margin-top: 20px; display: block; border-right: 4px solid var(--teal); padding-right: 10px; }
+
+        table { width: 100%; border-collapse: collapse; background: white; margin: 15px 0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        th { background: #eee; padding: 12px; text-align: right; font-size: 0.85rem; }
+        td { padding: 10px 12px; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+        .num { font-family: monospace; font-weight: bold; color: #666; }
+
+        .coming-soon-box { background: #e9ecef; color: #777; padding: 25px; border-radius: 8px; text-align: center; margin-top: 30px; border: 2px dashed #ccc; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>מדדי מניות ארה"ב - S&P 500</h1>
-    <p>ריכוז מסלולים כשרים בחלוקה למט"ח ושיטות פיקוח</p>
+    <div class="logo-seal">כלכלה<br>מהדרין</div>
+    <h1>מדדי ארה"ב (S&P 500)</h1>
+    <p>ריכוז מסלולים עוקבי מדד בפיקוח הלכתי</p>
 </header>
 
+<nav><a href="index.html">🏠 חזרה לבית</a></nav>
+
 <div class="container">
-    <div class="update-box">
-        <strong>עדכון אחרון:</strong> 12/03/2026 - נוספו קרנות סל ומחקות חדשות בפיקוח הבד"ץ ותשואה כהלכה.
+    
+    <div class="section-header">S&P 500 קלאסי (חשוף למט"ח)</div>
+    
+    <span class="method-label">🛡️ גופי כשרות שאינם מאשרים בעלות על מניות (Swap)</span>
+    <p style="font-size: 0.8rem; color: #777; margin: 5px 0;">פיקוח: בד"ץ העדה החרדית, גלאט הון</p>
+    <table>
+        <tr><th>שם הנייר</th><th>מספר נייר</th><th>סוג</th></tr>
+        <tr><td>תכלית סל S&P 500 (4D)</td><td class="num">1144385</td><td>קרן סל</td></tr>
+        <tr><td>קסם S&P 500 (4D) ETF</td><td class="num">1146471</td><td>קרן סל</td></tr>
+        <tr><td>הראל סל S&P 500</td><td class="num">1149020</td><td>קרן סל</td></tr>
+        <tr><td>MTF סל S&P 500 (4D)</td><td class="num">1150333</td><td>קרן סל</td></tr>
+    </table>
+
+    <span class="method-label">🔍 גופי כשרות המסננים מניות (בעלות ישירה)</span>
+    <p style="font-size: 0.8rem; color: #777; margin: 5px 0;">פיקוח: תשואה כהלכה, הרב אריה דביר</p>
+    <table>
+        <tr><td>Invesco S&P 500 - NTR</td><td class="num">1183441</td><td>קרן סל</td></tr>
+    </table>
+
+    <div class="section-header">S&P 500 מנוטרל מט"ח (Hedged)</div>
+    
+    <span class="method-label">🛡️ גופי כשרות שאינם מאשרים בעלות על מניות</span>
+    <table>
+        <tr><td>תכלית סל מנוטרלת מט"ח</td><td class="num">1143817</td><td>קרן סל</td></tr>
+        <tr><td>MTF מחקה S&P 500 מנוטרלת</td><td class="num">5125869</td><td>קרן מחקה</td></tr>
+    </table>
+
+    <div class="coming-soon-box">
+        <h4>נאסד"ק 100, סקטוריאליים ושונות - בקרוב</h4>
+        <p>רשימות הקרנות הכשרות למדדים נוספים בארה"ב יעלו בקרוב.</p>
     </div>
 
-    <div class="kosher-policy-link">
-        💡 חשוב לדעת: קיימים הבדלים משמעותיים בין שיטות הפיקוח השונות על מניות. <br>
-        <a href="kosher.html">למאמר המלא: מדיניות גופי הכשרות בשוק ההון >></a>
-    </div>
-
-    <div class="method-box">
-        <div class="method-header">S&P 500 קלאסי (4D - חשוף לדולר)</div>
-        
-        <strong>📈 קרנות סל (ETF)</strong>
-        <table>
-            <tr><th>מספר נייר</th><th>שם הקרן</th><th>כשרות</th></tr>
-            <tr><td>1144385</td><td>תכלית סל S&P 500</td><td class="tag-swap">בד"ץ העדה"ח, גלאט הון</td></tr>
-            <tr><td>1146471</td><td>קסם S&P 500 ETF</td><td class="tag-swap">בד"ץ העדה"ח, גלאט הון, הרב דביר</td></tr>
-            <tr><td>1149020</td><td>הראל סל S&P 500</td><td class="tag-swap">בד"ץ העדה"ח, גלאט הון, הרב דביר</td></tr>
-            <tr><td>1150333</td><td>MTF סל S&P 500</td><td class="tag-swap">בד"ץ העדה"ח, גלאט הון</td></tr>
-            <tr><td>1159250</td><td>ISHARES S&P 500</td><td class="tag-swap">בד"ץ העדה החרדית</td></tr>
-            <tr><td>1183441</td><td>Invesco S&P 500</td><td class="tag-filter">תשואה כהלכה</td></tr>
-        </table>
-
-        <strong>📑 קרנות מחקות / נאמנות</strong>
-        <table>
-            <tr><th>מספר נייר</th><th>שם הקרן</th><th>כשרות</th></tr>
-            <tr><td>5113998</td><td>תכלית S&P 500 TTF</td><td class="tag-swap">בד"ץ העדה החרדית</td></tr>
-            <tr><td>5122627</td><td>MTF מחקה S&P 500</td><td class="tag-swap">בד"ץ העדה החרדית</td></tr>
-        </table>
-    </div>
-
-    <div class="method-box">
-        <div class="method-header">S&P 500 מנוטרל מט"ח (4A)</div>
-        
-        <strong>📈 קרנות סל (ETF)</strong>
-        <table>
-            <tr><th>מספר נייר</th><th>שם הקרן</th><th>כשרות</th></tr>
-            <tr><td>1143817</td><td>תכלית סל מנוטרלת מט"ח</td><td class="tag-swap">בד"ץ העדה"ח, גלאט הון</td></tr>
-            <tr><td>1146604</td><td>קסם S&P 500 ETF מנוטרלת</td><td class="tag-swap">בד"ץ העדה"ח, גלאט הון, הרב דביר</td></tr>
-            <tr><td>1200435</td><td>אי.בי.אי סל מנוטרלת</td><td class="tag-filter">הרב אריה דביר</td></tr>
-        </table>
-
-        <strong>📑 קרנות מחקות / נאמנות</strong>
-        <table>
-            <tr><th>מספר נייר</th><th>שם הקרן</th><th>כשרות</th></tr>
-            <tr><td>5125869</td><td>MTF מחקה מנוטרלת מט"ח</td><td class="tag-swap">בד"ץ העדה החרדית</td></tr>
-            <tr><td>5123161</td><td>תכלית S&P 500 TTF מנוטרלת</td><td class="tag-swap">בד"ץ העדה החרדית</td></tr>
-        </table>
-    </div>
-
-    <div class="coming-soon">
-        <h3>מדדי נאסד"ק, סקטוריאליים וישראל</h3>
-        <p>הנתונים מעובדים כעת ויעלו בקרוב באתר.</p>
-        <a href="index.html" style="color:var(--blue); font-weight:bold;">חזרה לדף הבית</a>
-    </div>
 </div>
 
 <footer>
-    <p>הון והלכה - כלכלה מהדרין | המידע אינו ייעוץ השקעות.</p>
+    <p>הון והלכה © 2026</p>
 </footer>
 
 </body>

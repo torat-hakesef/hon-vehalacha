@@ -6,7 +6,7 @@
     <title>הון והלכה | דף הבית</title>
     <style>
         :root { --blue: #1a3c5e; --gold: #d4af37; --light: #f4f7f6; --white: #ffffff; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--light); margin: 0; padding-top: 30px; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--light); margin: 0; }
         
         /* שורת עדכונים */
         .updates-ticker { background: #0a192f; color: #e6f1ff; padding: 10px 20px; font-family: monospace; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1001; }
@@ -14,16 +14,18 @@
         .blink-dot { height: 8px; width: 8px; background-color: #64ffda; border-radius: 50%; display: inline-block; margin-right: 10px; box-shadow: 0 0 8px #64ffda; animation: blink 1.5s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-        /* עיצוב כללי לפי התמונה */
-        header { background: var(--blue); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
+        /* מבנה לפי צילום המסך */
+        header { background: var(--blue); color: white; padding: 50px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
         .container { max-width: 1200px; margin: auto; padding: 20px; }
-        .section-title-bar { background: var(--blue); color: var(--white); padding: 12px 20px; border-radius: 8px; margin: 25px 0; border-right: 5px solid var(--gold); font-weight: bold; }
+        
+        .section-title-bar { background: var(--blue); color: var(--white); padding: 12px 20px; border-radius: 8px; margin: 30px 0 15px; border-right: 5px solid var(--gold); font-weight: bold; font-size: 1.2rem; }
         
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .card { background: var(--white); padding: 25px; border-radius: 10px; border-top: 4px solid var(--gold); box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; text-decoration: none; color: inherit; display: block; }
-        .card:hover { transform: translateY(-3px); transition: 0.3s; }
-        .status { font-size: 0.8rem; color: #00c4cc; display: block; margin-top: 10px; font-weight: bold; }
-        
+        .card { background: var(--white); padding: 30px; border-radius: 10px; border-top: 4px solid var(--gold); box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; text-decoration: none; color: inherit; display: block; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .card h3 { color: var(--blue); margin: 0; font-size: 1.2rem; }
+        .status { font-size: 0.85rem; color: #00c4cc; display: block; margin-top: 15px; font-weight: bold; }
+
         @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
@@ -39,7 +41,7 @@
 
 <header>
     <h1>הון והלכה</h1>
-    <p>שוק ההון והשקעות ע"פ ההלכה</p>
+    <p>מדריך המסלולים והאפיקים הכשרים</p>
 </header>
 
 <div class="container">

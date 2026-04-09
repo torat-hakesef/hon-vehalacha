@@ -5,48 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>הון והלכה | שוק ההון והשקעות ע"פ ההלכה</title>
     <style>
-        :root { --blue: #1a3c5e; --gold: #d4af37; --light: #f4f7f6; --white: #ffffff; --text: #333; --cyan: #64ffda; }
+        :root { --blue: #1a3c5e; --gold: #d4af37; --light: #f4f7f6; --white: #ffffff; --text: #333; --teal: #008080; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--light); margin: 0; color: var(--text); line-height: 1.6; }
         
+        /* Header & Logo */
         header { background: var(--blue); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
-        .logo-seal { width: 80px; height: 80px; border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-weight: bold; color: var(--gold); line-height: 1.2; font-size: 0.9rem; }
+        .logo-seal { width: 80px; height: 80px; border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-weight: bold; color: var(--gold); line-height: 1.2; }
 
+        /* Navigation */
         nav { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; }
         nav a { padding: 15px 20px; text-decoration: none; color: var(--blue); font-weight: bold; }
 
         .container { max-width: 1200px; margin: 20px auto; padding: 0 20px; display: grid; grid-template-columns: 3fr 1fr; gap: 30px; }
 
-        /* שורת עדכונים הייטק */
-        .updates-bar { grid-column: span 2; background: #0a192f; color: #e6f1ff; padding: 12px 20px; border-radius: 6px; border: 1px solid rgba(100, 255, 218, 0.3); font-family: monospace; display: flex; align-items: center; margin-bottom: 10px; }
-        .updates-tag { background: rgba(100, 255, 218, 0.1); color: var(--cyan); padding: 3px 10px; border-radius: 4px; font-size: 0.8rem; margin-left: 15px; border: 1px solid var(--cyan); font-weight: bold; }
-        .blink-dot { height: 8px; width: 8px; background-color: var(--cyan); border-radius: 50%; display: inline-block; margin-right: 10px; animation: blink 1.5s infinite; box-shadow: 0 0 8px var(--cyan); }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        /* שורת עדכונים */
+        .updates-bar { grid-column: span 2; background: var(--white); border-right: 5px solid var(--teal); padding: 12px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-weight: bold; margin-bottom: 10px; }
+        .updates-tag { background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8rem; margin-left: 10px; }
 
-        /* Slider */
-        .slider-container { background: var(--blue); color: white; border-radius: 10px; overflow: hidden; height: 250px; margin-bottom: 30px; position: relative; }
-        .slide { display: none; padding: 40px; height: 100%; box-sizing: border-box; background: linear-gradient(45deg, var(--blue), #2c5e8c); }
-        .slide.active { display: block; }
-        .slide h2 { color: var(--gold); margin: 0 0 10px; }
-        .slide-btn { display: inline-block; background: var(--gold); color: var(--blue); padding: 8px 15px; border-radius: 4px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+        /* Slider Section */
+        .slider-container { background: var(--blue); color: white; border-radius: 10px; overflow: hidden; position: relative; height: 300px; margin-bottom: 30px; }
+        .slide { display: none; padding: 40px; height: 100%; box-sizing: border-box; }
+        .slide.active { display: block; background: linear-gradient(45deg, var(--blue), #2c5e8c); }
+        .slide h2 { color: var(--gold); margin-top: 0; }
+        .slide-btn { display: inline-block; background: var(--gold); color: var(--blue); padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 15px; }
 
-        /* Grid sections 01-04 */
+        /* Grid Sections (01, 02...) */
         .full-width { grid-column: span 2; }
         .section-header { display: flex; align-items: center; margin: 40px 0 20px; }
         .section-num { font-size: 3rem; font-weight: bold; color: #ddd; margin-left: 15px; line-height: 1; }
-        .section-title { font-size: 1.4rem; font-weight: bold; color: var(--blue); border-bottom: 3px solid var(--gold); flex-grow: 1; padding-bottom: 5px; }
+        .section-title { font-size: 1.5rem; font-weight: bold; color: var(--blue); border-bottom: 3px solid var(--gold); padding-bottom: 5px; flex-grow: 1; }
 
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; text-decoration: none; color: inherit; border-top: 3px solid transparent; transition: 0.3s; }
-        .card:hover { transform: translateY(-3px); border-top-color: var(--gold); }
-        .card h3 { margin: 0 0 10px; font-size: 1.1rem; color: var(--blue); }
-        .card span { color: #008080; font-weight: bold; font-size: 0.85rem; }
+        .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; text-decoration: none; color: inherit; transition: 0.3s; border-top: 3px solid transparent; }
+        .card:hover { transform: translateY(-5px); border-top-color: var(--gold); }
+        .card h3 { margin: 0 0 10px; color: var(--blue); }
+        .card span { color: var(--teal); font-weight: bold; font-size: 0.9rem; }
 
+        /* Sidebar Widgets */
         .widget { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 20px; }
         .widget h4 { margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px; color: var(--blue); }
+        .widget ul { list-style: none; padding: 0; }
+        .widget li { margin-bottom: 12px; border-bottom: 1px solid #f9f9f9; padding-bottom: 5px; }
+        .widget a { text-decoration: none; color: #555; font-size: 0.9rem; }
 
-        footer { background: #f1f1f1; padding: 30px; text-align: center; margin-top: 50px; font-size: 0.8rem; color: #666; }
-        
-        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } .full-width, .updates-bar { grid-column: span 1; } .grid-3 { grid-template-columns: 1fr; } }
+        footer { background: #f1f1f1; padding: 40px 20px; text-align: center; margin-top: 60px; font-size: 0.85rem; }
+        .disclaimer { max-width: 900px; margin: 20px auto; color: #777; line-height: 1.4; text-align: justify; }
+
+        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } .full-width { grid-column: span 1; } .grid-3 { grid-template-columns: 1fr; } .updates-bar { grid-column: span 1; } }
     </style>
 </head>
 <body>
@@ -54,75 +59,125 @@
 <header>
     <div class="logo-seal">כלכלה<br>מהדרין</div>
     <h1>הון והלכה</h1>
-    <p>שוק ההון והשקעות ע"פ ההלכה</p>
+    <p>שוק ההון, פנסיה, והשקעות ע"פ ההלכה</p>
 </header>
 
 <nav>
     <a href="index.html">🏠 דף הבית</a>
     <a href="#about">📖 אודות</a>
     <a href="mavo.html">📚 מאמרים</a>
+    <a href="#tracks">📊 מסלולים כשרים</a>
 </nav>
 
 <div class="container">
+    
     <div class="updates-bar">
-        <span class="updates-tag">SYSTEM UPDATE</span>
-        <span style="flex-grow:1">עודכן פירוט מסלולי S&P 500 (סל ומחקה) בחלוקה לכשרויות ומט"ח.</span>
-        <span class="blink-dot"></span>
+        <span class="updates-tag">חדש</span>
+        עודכן פירוט מסלולי S&P 500 (סל ומחקה) בחלוקה לכשרויות ומט"ח.
     </div>
 
     <div class="main-content">
         <div class="slider-container">
             <div class="slide active">
                 <h2>מבוא לשוק ההון</h2>
-                <p>הצעדים הראשונים בעולם ההשקעות בשפה ברורה.</p>
+                <p>הצעדים הראשונים בעולם ההשקעות: מניות, אג"ח ומדדים בשפה ברורה.</p>
                 <a href="mavo.html" class="slide-btn">למאמר המלא</a>
             </div>
             <div class="slide">
                 <h2>למה צריך מסלול כשר?</h2>
-                <p>חשיבות הפיקוח ההלכתי ומניעת חששות שבת וריבית.</p>
+                <p>הסבר על חשיבות הפיקוח ההלכתי ומניעת חששות שבת, ריבית ואיסורי הנאה.</p>
                 <a href="kosher.html" class="slide-btn">למאמר המלא</a>
             </div>
         </div>
+
         <section id="about" class="widget">
             <h4>אודות הפורטל</h4>
-            <p>פורטל <strong>'הון והלכה'</strong> מנגיש את עולם הכלכלה לציבור שומר המצוות תוך הקפדה על גדרי ההלכה.</p>
+            <p>פורטל <strong>'הון והלכה'</strong> נועד להנגיש את עולם הכלכלה ושוק ההון לציבור שומר המצוות, תוך הקפדה יתרה על גדרי ההלכה ופיקוח הדוק. כאן תמצאו את כל הידע הנדרש למסחר בביטחון וע"פ ההלכה.</p>
         </section>
     </div>
 
     <aside class="sidebar">
         <div class="widget">
             <h4>ניווט מהיר</h4>
-            <ul style="list-style:none; padding:0; font-size:0.9rem;">
-                <li><a href="#01" style="text-decoration:none; color:#555;">← מדדי מניות</a></li>
-                <li><a href="#02" style="text-decoration:none; color:#555;">← אג"ח וכספיות</a></li>
+            <ul>
+                <li><a href="#01">← מדדי מניות</a></li>
+                <li><a href="#02">← אג"ח וכספיות</a></li>
+                <li><a href="#03">← שונות ונדל"ן</a></li>
+                <li><a href="#04">← פנסיה וגמל</a></li>
+            </ul>
+        </div>
+        <div class="widget">
+            <h4>מאמרים מומלצים</h4>
+            <ul>
+                <li><a href="mavo.html"><b>מבוא לשוק ההון</b> - איך מתחילים?</a></li>
+                <li><a href="kosher.html"><b>בעיות במסלול הכללי</b> - ניתוח הלכתי</a></li>
             </ul>
         </div>
     </aside>
 
-    <div class="full-width">
-        <div class="section-header" id="01"><div class="section-num">01</div><div class="section-title">מנועי צמיחה - מדדי מניות</div></div>
+    <div class="full-width" id="tracks">
+        
+        <div class="section-header" id="01">
+            <div class="section-num">01</div>
+            <div class="section-title">מנועי צמיחה - מדדי מניות</div>
+        </div>
         <div class="grid-3">
             <div class="card"><h3>מדדים בארץ</h3><span>בקרוב >></span></div>
             <a href="tracks.html" class="card"><h3>מדדים ארה"ב (S&P 500)</h3><span>עודכן - לרשימה >></span></a>
             <div class="card"><h3>מדדים עולמיים</h3><span>בקרוב >></span></div>
         </div>
 
-        <div class="section-header" id="02"><div class="section-num">02</div><div class="section-title">השקעות סולידיות</div></div>
+        <div class="section-header" id="02">
+            <div class="section-num">02</div>
+            <div class="section-title">השקעות סולידיות</div>
+        </div>
         <div class="grid-3">
             <div class="card"><h3>קרנות כספיות</h3><span>בקרוב >></span></div>
             <div class="card"><h3>קרנות סל אג"ח</h3><span>בקרוב >></span></div>
-            <div class="card"><h3>אג"ח קונצרני</h3><span>בקרוב >></span></div>
+            <div class="card"><h3>אג"ח קונצרני כשר</h3><span>בקרוב >></span></div>
         </div>
+
+        <div class="section-header" id="03">
+            <div class="section-num">03</div>
+            <div class="section-title">שונות ונדל"ן</div>
+        </div>
+        <div class="grid-3">
+            <div class="card"><h3>מטבעות וקריפטו</h3><span>בקרוב >></span></div>
+            <div class="card"><h3>סחורות וזהב</h3><span>בקרוב >></span></div>
+            <div class="card"><h3>השקעות נדל"ן</h3><span>בקרוב >></span></div>
+        </div>
+
+        <div class="section-header" id="04">
+            <div class="section-num">04</div>
+            <div class="section-title">חיסכון ארוך טווח</div>
+        </div>
+        <div class="grid-3">
+            <div class="card"><h3>פנסיה וגמל</h3><span>בקרוב >></span></div>
+            <div class="card"><h3>השתלמות וחיסכון</h3><span>בקרוב >></span></div>
+            <div class="card"><h3>חיסכון לכל ילד</h3><span>בקרוב >></span></div>
+        </div>
+
     </div>
 </div>
 
 <footer>
-    <p>הון והלכה © 2026 | המידע אינו ייעוץ השקעות או פסיקה הלכתית.</p>
+    <strong>הון והלכה © 2026</strong>
+    <div class="disclaimer">
+        <strong>הבהרה חשובה:</strong> כל המידע המופיע באתר זה מובא למטרות אינפורמציה והעשרה בלבד, ואינו מהווה ייעוץ השקעות או חוות דעת הלכתית סופית. אין לראות במידע זה תחליף לייעוץ מקצועי המותאם לנתוניו האישיים של כל אדם. המערכת אינה נושאת באחריות לכל נזק שייגרם מהסתמכות על התכנים.
+    </div>
 </footer>
 
 <script>
-    let cur = 0; const s = document.querySelectorAll('.slide');
-    setInterval(() => { s[cur].classList.remove('active'); cur = (cur+1)%s.length; s[cur].classList.add('active'); }, 5000);
+    // לוגיקה פשוטה להחלפת מאמרים בסליידר
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    function showNextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+    setInterval(showNextSlide, 5000); // מחליף כל 5 שניות
 </script>
+
 </body>
 </html>

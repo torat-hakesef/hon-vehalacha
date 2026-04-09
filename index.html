@@ -3,48 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>הון והלכה | שוק ההון והשקעות ע"פ ההלכה</title>
+    <title>הון והלכה | מדריך המסלולים והאפיקים הכשרים</title>
     <style>
-        :root { --blue: #1a3c5e; --blue-dark: #122a42; --gold: #d4af37; --teal: #00c4cc; --light: #f4f7f6; --white: #ffffff; }
+        :root { --blue: #1a3c5e; --gold: #d4af37; --light: #f4f7f6; --white: #ffffff; --teal: #00c4cc; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--light); margin: 0; color: #333; }
         
-        /* שורת עדכונים */
+        /* שורת עדכונים - התוספת המבוקשת */
         .updates-ticker { background: #0a192f; color: #e6f1ff; padding: 10px 20px; font-family: monospace; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1001; }
         .updates-label { border: 1px solid #64ffda; color: #64ffda; padding: 2px 8px; border-radius: 4px; margin-left: 15px; font-weight: bold; }
         .blink-dot { height: 8px; width: 8px; background-color: #64ffda; border-radius: 50%; display: inline-block; margin-right: 10px; box-shadow: 0 0 8px #64ffda; animation: blink 1.5s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-        header { background: var(--blue); color: white; padding: 60px 20px 30px; text-align: center; border-bottom: 5px solid var(--gold); }
+        header { background: var(--blue); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
+        .container { max-width: 1200px; margin: auto; padding: 20px; display: flex; gap: 30px; }
         
-        .container { max-width: 1200px; margin: auto; padding: 20px; display: flex; gap: 30px; flex-wrap: wrap; }
+        /* סרגל צד - לפי עמוד 1 בתמונה */
+        .sidebar { flex: 1; min-width: 250px; }
+        .sidebar-widget { background: var(--white); padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-top: 4px solid var(--gold); }
+        .widget-title { color: var(--blue); font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+        .nav-list { list-style: none; padding: 0; margin: 0; }
+        .nav-list li { padding: 8px 0; border-bottom: 1px solid #f9f9f9; }
+        .nav-list a { text-decoration: none; color: #555; font-size: 0.95rem; }
+
+        /* תוכן מרכזי */
+        .main-content { flex: 3; }
         
-        /* סרגל צד ימין (Sidebar) */
-        .sidebar { flex: 1; min-width: 280px; }
-        .sidebar-widget { background: var(--white); padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid var(--gold); }
-        .widget-title { color: var(--blue); font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .nav-list { list-style: none; padding: 0; }
-        .nav-list li { margin: 10px 0; }
-        .nav-list a { text-decoration: none; color: #555; font-size: 0.95rem; transition: 0.2s; }
-        .nav-list a:hover { color: var(--gold); padding-right: 5px; }
+        /* סליידר - לפי עמוד 1 בתמונה */
+        .hero-banner { background: var(--white); border-radius: 15px; padding: 40px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-right: 8px solid var(--blue); }
+        .hero-banner h2 { color: var(--blue); margin: 0; font-size: 1.8rem; }
+        .hero-banner p { color: #666; margin-top: 10px; }
 
-        /* תוכן מרכזי וסליידר */
-        .main-content { flex: 3; min-width: 0; }
-        .hero-slider { background: var(--white); border-radius: 15px; overflow: hidden; height: 300px; position: relative; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-right: 6px solid var(--blue); display: flex; align-items: center; padding: 0 40px; }
-        .hero-text h2 { color: var(--blue); font-size: 2rem; margin: 0; }
-        .hero-text p { color: #666; font-size: 1.1rem; }
-
-        /* קטגוריות וקוביות */
-        .section-full { width: 100%; }
-        .section-title-bar { background: var(--blue); color: var(--white); padding: 12px 20px; border-radius: 8px; margin: 30px 0 15px; border-right: 5px solid var(--gold); font-weight: bold; }
-        .section-title-bar span { color: var(--gold); margin-left: 10px; }
+        /* כותרות קטגוריה - העיצוב המדויק מהתמונה */
+        .section-bar { background: var(--blue); color: var(--white); padding: 12px 20px; border-radius: 8px; margin: 30px 0 15px; border-right: 5px solid var(--gold); font-weight: bold; }
+        .section-bar span { color: var(--gold); margin-left: 10px; }
         
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .card { background: var(--white); padding: 25px; border-radius: 10px; border-top: 4px solid var(--gold); box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; text-decoration: none; color: inherit; display: block; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { color: var(--blue); font-size: 1.1rem; margin: 0; }
-        .status { font-size: 0.85rem; color: var(--teal); display: block; margin-top: 15px; font-weight: bold; }
+        /* גריד הקוביות */
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; }
+        .card { background: var(--white); padding: 25px; border-radius: 10px; border-top: 4px solid var(--gold); box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; text-decoration: none; color: inherit; }
+        .card h3 { color: var(--blue); margin: 0; font-size: 1.1rem; }
+        .status { font-size: 0.8rem; color: var(--teal); display: block; margin-top: 12px; font-weight: bold; }
 
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .container { flex-direction: column; } }
+        @media (max-width: 768px) { .container { flex-direction: column; } .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -52,72 +51,67 @@
 <div class="updates-ticker">
     <span class="updates-label">LIVE UPDATES</span>
     <marquee direction="right" scrollamount="4" style="flex-grow: 1;">
-        🚀 עודכן דף מסלולי S&P 500 | 📊 בקרוב: מדדי נאסד"ק 100, מדדי ישראל, קרנות כספיות ואג"ח...
+        🚀 עודכן דף מסלולי S&P 500 | 📊 בקרוב: נאסד"ק 100, מדדי ישראל, קרנות כספיות ואג"ח...
     </marquee>
     <span class="blink-dot"></span>
 </div>
 
 <header>
     <h1>הון והלכה</h1>
-    <p>שוק ההון והשקעות ע"פ ההלכה</p>
+    <p>מדריך המסלולים והאפיקים הכשרים</p>
 </header>
 
 <div class="container">
     
     <aside class="sidebar">
         <div class="sidebar-widget">
-            <div class="widget-title">ניווט מהיר</div>
+            <div class="widget-title">דף הבית</div>
             <ul class="nav-list">
-                <li><a href="#">🏠 דף הבית</a></li>
-                <li><a href="#">📊 מסלולים כשרים</a></li>
-                <li><a href="#">📚 מאמרים</a></li>
+                <li><a href="#">מסלולים כשרים</a></li>
+                <li><a href="#">מאמרים</a></li>
             </ul>
         </div>
         <div class="sidebar-widget">
-            <div class="widget-title">מאמרים אחרונים</div>
+            <div class="widget-title">מאמרים נוספים</div>
             <ul class="nav-list">
                 <li><a href="#">מבוא לשוק ההון</a></li>
-                <li><a href="#">למה צריך מסלול כשר?</a></li>
+                <li><a href="#">בצוות במסלול הכללי</a></li>
             </ul>
         </div>
     </aside>
 
     <main class="main-content">
-        <div class="hero-slider">
-            <div class="hero-text">
-                <h2>למה צריך מסלול כשר?</h2>
-                <p>הסבר מקיף על הבעיות ההלכתיות והפתרונות בשוק ההון.</p>
-            </div>
+        <div class="hero-banner">
+            <h2>למה צריך מסלול כשר?</h2>
+            <p>הסבר על הבעיות ההלכתיות בשוק ההון והצורך בפיקוח.</p>
         </div>
 
-        <div class="section-full">
-            <div class="section-title-bar"><span>01</span> מנועי צמיחה - מדדי מניות</div>
-            <div class="grid">
-                <div class="card"><h3>מדדים בארץ</h3><span class="status">בקרוב >></span></div>
-                <a href="tracks.html" class="card"><h3>מדדים ארה"ב (S&P 500)</h3><span class="status">עודכן - לכניסה >></span></a>
-                <div class="card"><h3>מדדים עולמיים</h3><span class="status">בקרוב >></span></div>
-            </div>
+        <div class="section-bar"><span>01</span> מנועי צמיחה - מדדי מניות</div>
+        <div class="grid">
+            <div class="card"><h3>מדדים בארץ</h3><span class="status">בקרוב >></span></div>
+            <a href="tracks.html" class="card"><h3>S&P 500</h3><span class="status">עודכן - לכניסה >></span></a>
+            <div class="card"><h3>מדדים עולמיים</h3><span class="status">בקרוב >></span></div>
+        </div>
 
-            <div class="section-title-bar"><span>02</span> השקעות סולידיות</div>
-            <div class="grid">
-                <div class="card"><h3>קרנות כספיות</h3><span class="status">בקרוב >></span></div>
-                <div class="card"><h3>קרנות סל אג"ח</h3><span class="status">בקרוב >></span></div>
-                <div class="card"><h3>אג"ח קונצרני כשר</h3><span class="status">בקרוב >></span></div>
-            </div>
+        <div class="section-bar"><span>02</span> השקעות סולידיות</div>
+        <div class="grid">
+            <div class="card"><h3>קרנות כספיות</h3><span class="status">בקרוב >></span></div>
+            <div class="card"><h3>קרנות סל אג"ח</h3><span class="status">בקרוב >></span></div>
+            <div class="card"><h3>אג"ח קונצרני כשר</h3><span class="status">בקרוב >></span></div>
+        </div>
 
-            <div class="section-title-bar"><span>03</span> חיסכון ארוך טווח</div>
-            <div class="grid">
-                <div class="card"><h3>פנסיה וגמל</h3><span class="status">בקרוב >></span></div>
-                <div class="card"><h3>השתלמות וחיסכון</h3><span class="status">בקרוב >></span></div>
-                <div class="card"><h3>חיסכון לכל ילד</h3><span class="status">בקרוב >></span></div>
-            </div>
+        <div class="section-bar"><span>03</span> חיסכון ארוך טווח</div>
+        <div class="grid">
+            <div class="card"><h3>פנסיה וגמל</h3><span class="status">בקרוב >></span></div>
+            <div class="card"><h3>השתלמות וחיסכון</h3><span class="status">בקרוב >></span></div>
+            <div class="card"><h3>חיסכון לכל ילד</h3><span class="status">בקרוב >></span></div>
+        </div>
 
-            <div class="section-title-bar"><span>04</span> שונות ונדל"ן</div>
-            <div class="grid">
-                <div class="card"><h3>מטבעות וקריפטו</h3><span class="status">בקרוב >></span></div>
-                <div class="card"><h3>סחורות וזהב</h3><span class="status">בקרוב >></span></div>
-                <div class="card"><h3>נדל"ן והשקעות</h3><span class="status">בקרוב >></span></div>
-            </div>
+        <div class="section-bar"><span>04</span> שונות ונדל"ן</div>
+        <div class="grid">
+            <div class="card"><h3>מטבעות וקריפטו</h3><span class="status">בקרוב >></span></div>
+            <div class="card"><h3>סחורות וזהב</h3><span class="status">בקרוב >></span></div>
+            <div class="card"><h3>נדל"ן והשקעות</h3><span class="status">בקרוב >></span></div>
         </div>
     </main>
 </div>

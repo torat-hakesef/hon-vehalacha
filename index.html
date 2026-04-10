@@ -5,77 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>הון והלכה | שוק ההון וההשקעות על פי ההלכה</title>
     <style>
-        :root { --blue: #1a3c5e; --blue-dark: #0a192f; --gold: #d4af37; --white: #ffffff; --light: #f4f7f6; --text: #333; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--light); margin: 0; color: var(--text); line-height: 1.6; }
+        :root { 
+            --blue: #1a3c5e; 
+            --blue-dark: #0a192f; 
+            --gold: #d4af37; 
+            --white: #ffffff; 
+            --light: #f4f7f6; 
+            --text: #333; 
+        }
 
-        /* גילוי נאות עליון */
-        .disclaimer-top-bar { background: #e1e8ed; color: #666; font-size: 0.8rem; text-align: center; padding: 8px; border-bottom: 1px solid #d1d9e0; position: fixed; top: 0; width: 100%; z-index: 2000; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, sans-serif; 
+            background: var(--light); 
+            margin: 0; 
+            color: var(--text); 
+            line-height: 1.6; 
+        }
+
+        /* גילוי נאות עליון קבוע */
+        .disclaimer-top-bar { 
+            background: #e1e8ed; 
+            color: #666; 
+            font-size: 0.8rem; 
+            text-align: center; 
+            padding: 8px; 
+            border-bottom: 1px solid #d1d9e0; 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            z-index: 2000; 
+        }
         .disclaimer-top-bar a { color: var(--blue); text-decoration: none; font-weight: bold; }
 
-        /* הדר - לוגו מעודכן ורקע אלמנטים */
+        /* הדר - לוגו מעודכן ורקע עם אלמנטים */
         header { 
             background: var(--blue); 
-            background-image: linear-gradient(rgba(26, 60, 94, 0.9), rgba(26, 60, 94, 0.9)), url('https://www.transparenttextures.com/patterns/currency.png');
-            color: white; padding: 100px 20px 50px; text-align: center; border-bottom: 5px solid var(--gold); position: relative; overflow: hidden;
+            background-image: linear-gradient(rgba(26, 60, 94, 0.92), rgba(26, 60, 94, 0.92)), url('https://www.transparenttextures.com/patterns/currency.png');
+            color: white; 
+            padding: 110px 20px 50px; 
+            text-align: center; 
+            border-bottom: 5px solid var(--gold); 
+            position: relative; 
         }
-        .logo-area { margin-bottom: 20px; }
-        .logo-circle { width: 120px; height: 120px; border: 4px double var(--gold); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto; background: rgba(255,255,255,0.05); }
-        .logo-main { color: var(--gold); font-weight: bold; font-size: 1.3rem; line-height: 1.1; }
-        .logo-line { width: 60%; height: 1px; background: var(--gold); margin: 5px 0; }
-        
-        header h1 { font-size: 2.2rem; margin: 15px 0 5px; color: white; }
-        header p { font-size: 1.1rem; color: #bdc3c7; margin: 0; }
 
-        /* אזור עדכונים עם הערות מוסתרות */
-        .updates-bar { background: var(--blue-dark); color: #64ffda; padding: 12px; border-bottom: 2px solid var(--gold); font-size: 0.95rem; display: flex; align-items: center; justify-content: center; position: sticky; top: 35px; z-index: 1001; }
+        .logo-area { margin-bottom: 15px; }
+        .logo-circle { 
+            width: 130px; 
+            height: 130px; 
+            border: 3px solid var(--gold); 
+            border-radius: 50%; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            margin: 0 auto; 
+            background: rgba(255,255,255,0.05); 
+        }
+        .logo-text-top { color: var(--gold); font-weight: bold; font-size: 1.4rem; letter-spacing: 1px; }
+        .logo-line { width: 70%; height: 1px; background: var(--gold); margin: 5px 0; }
+        .logo-text-bottom { color: white; font-weight: bold; font-size: 1.1rem; letter-spacing: 2px; }
+        
+        header h1 { font-size: 2.8rem; margin: 15px 0 5px; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header p { font-size: 1.2rem; color: #bdc3c7; margin: 0; font-weight: 300; }
+
+        /* אזור חדשות ועדכונים */
+        .updates-bar { 
+            background: var(--blue-dark); 
+            color: #64ffda; 
+            padding: 12px; 
+            border-bottom: 2px solid var(--gold); 
+            font-size: 0.95rem; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            position: sticky; 
+            top: 35px; 
+            z-index: 1001; 
+        }
 
         /* ניווט */
-        nav { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 81px; z-index: 1000; height: 55px; display: flex; align-items: center; justify-content: center; }
-        nav a { margin: 0 15px; text-decoration: none; color: var(--blue); font-weight: bold; }
+        nav { 
+            background: var(--white); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            position: sticky; 
+            top: 81px; 
+            z-index: 1000; 
+            height: 55px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--blue); font-weight: bold; transition: 0.3s; }
+        nav a:hover { color: var(--gold); }
 
         .container { max-width: 1250px; margin: auto; padding: 30px 20px; display: flex; gap: 30px; }
         
         /* צד שמאל */
         .sidebar-left { flex: 3; display: flex; flex-direction: column; gap: 20px; }
-        .widget { background: var(--white); border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-right: 5px solid var(--blue); }
+        .widget { 
+            background: var(--white); 
+            border-radius: 12px; 
+            padding: 20px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+            border-right: 5px solid var(--blue); 
+        }
         .widget-title { color: var(--blue); font-weight: bold; border-bottom: 2px solid var(--light); padding-bottom: 10px; margin-bottom: 15px; }
         
         /* סרט נע מאמרים בצד */
-        .ticker-container { height: 300px; overflow: hidden; position: relative; }
-        .moving-list { position: absolute; width: 100%; animation: scrollUp 40s linear infinite; }
+        .ticker-container { height: 280px; overflow: hidden; position: relative; border: 1px solid #f0f0f0; border-radius: 8px; }
+        .moving-list { position: absolute; width: 100%; animation: scrollUp 45s linear infinite; }
         .moving-list:hover { animation-play-state: paused; }
-        .moving-list a { display: block; padding: 8px; border-bottom: 1px solid #eee; text-decoration: none; color: #444; font-size: 0.9rem; }
-        @keyframes scrollUp { 0% { top: 100%; } 100% { top: -250%; } }
+        .moving-list a { display: block; padding: 10px; border-bottom: 1px solid #eee; text-decoration: none; color: #444; font-size: 0.9rem; transition: 0.2s; }
+        .moving-list a:hover { background: #f9f9f9; color: var(--gold); }
 
-        /* רשימת כל המאמרים - מוסתרת כברירת מחדל */
-        #all-articles-list { display: none; margin-top: 15px; background: #f9f9f9; padding: 10px; border-radius: 8px; }
-        
+        @keyframes scrollUp { 0% { top: 100%; } 100% { top: -300%; } }
+
+        /* רשימת כל המאמרים - נפתח באותו דף */
+        #all-articles-container { display: none; background: #fff; border: 1px solid var(--blue); border-radius: 8px; margin-top: 10px; padding: 15px; }
+        .article-link-list { list-style: none; padding: 0; margin: 0; }
+        .article-link-list li { margin-bottom: 8px; border-bottom: 1px dashed #ddd; padding-bottom: 5px; }
+        .article-link-list a { text-decoration: none; color: var(--blue); font-size: 0.95rem; }
+
         /* תוכן מרכזי */
         .main-content { flex: 9; }
-        .about-box { background: var(--white); padding: 35px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-left: 8px solid var(--blue); }
+        .about-box { 
+            background: var(--white); 
+            padding: 35px; 
+            border-radius: 15px; 
+            margin-bottom: 30px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+            border-left: 8px solid var(--blue); 
+        }
 
         /* סליידר מאמרים מרכזי */
-        .slider-container { position: relative; background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 40px; min-height: 350px; }
-        .slide { display: none; flex-direction: row; height: 100%; }
+        .slider-wrapper { position: relative; background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 40px; }
+        .slide { display: none; flex-direction: row; min-height: 380px; animation: fadeIn 0.5s; }
         .slide.active { display: flex; }
-        .slide-img { flex: 1; background-size: cover; background-position: center; min-height: 350px; }
-        .slide-content { flex: 1; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
-        .slide-content h3 { color: var(--blue); font-size: 1.6rem; margin: 0 0 15px; }
-        .btn-full { background: var(--gold); color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; align-self: flex-start; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         
-        /* חצי שליטה לסליידר */
-        .slider-nav { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); padding: 0 10px; box-sizing: border-box; pointer-events: none; }
-        .nav-btn { background: rgba(0,0,0,0.3); color: white; border: none; padding: 15px; cursor: pointer; pointer-events: auto; border-radius: 50%; transition: 0.3s; }
-        .nav-btn:hover { background: var(--blue); }
+        .slide-img { flex: 1; background-size: cover; background-position: center; min-height: 300px; background-color: #eee; }
+        .slide-content { flex: 1; padding: 45px; display: flex; flex-direction: column; justify-content: center; }
+        .slide-content h3 { color: var(--blue); font-size: 1.8rem; margin: 0 0 15px; }
+        .slide-content p { color: #666; font-size: 1.05rem; margin-bottom: 25px; }
+        .btn-action { background: var(--gold); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; align-self: flex-start; transition: 0.3s; }
+        .btn-action:hover { background: var(--blue-dark); }
+        
+        .slider-nav { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); pointer-events: none; padding: 0 15px; box-sizing: border-box; }
+        .nav-arrow { background: rgba(255,255,255,0.7); color: var(--blue); border: none; width: 45px; height: 45px; cursor: pointer; pointer-events: auto; border-radius: 50%; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .nav-arrow:hover { background: var(--gold); color: white; }
 
-        /* 12 קוביות */
-        .track-group { margin-bottom: 40px; }
-        .group-title { background: var(--blue); color: white; padding: 12px 20px; border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; }
+        /* קוביות מדריך המסלולים */
+        .track-group { margin-bottom: 45px; }
+        .group-header { background: var(--blue); color: white; padding: 12px 20px; border-radius: 8px; margin-bottom: 20px; font-size: 1.2rem; font-weight: bold; }
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .track-card { background: var(--white); padding: 30px 20px; border-radius: 12px; text-align: center; text-decoration: none; color: inherit; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-bottom: 4px solid var(--gold); }
+        .track-card { background: var(--white); padding: 35px 20px; border-radius: 12px; text-align: center; text-decoration: none; color: inherit; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border-bottom: 4px solid var(--gold); transition: 0.3s; }
+        .track-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .track-card h4 { margin: 0; color: var(--blue); font-size: 1.15rem; }
 
+        /* פוטר */
         footer { background: var(--blue-dark); color: #bdc3c7; padding: 60px 20px; text-align: center; margin-top: 50px; border-top: 5px solid var(--gold); }
-        .footer-legal { max-width: 1000px; margin: 30px auto 0; font-size: 0.85rem; text-align: justify; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; }
+        .footer-legal { max-width: 1000px; margin: 30px auto 0; font-size: 0.85rem; text-align: justify; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; color: #888; }
 
         @media (max-width: 900px) { .container { flex-direction: column; } .grid-3 { grid-template-columns: 1fr; } .slide { flex-direction: column; } }
     </style>
@@ -89,9 +178,9 @@
 <header>
     <div class="logo-area">
         <div class="logo-circle">
-            <span class="logo-main">כלכלה</span>
+            <span class="logo-text-top">כלכלה</span>
             <div class="logo-line"></div>
-            <span class="logo-main">מהדרין</span>
+            <span class="logo-text-bottom">מהדרין</span>
         </div>
     </div>
     <h1>הון והלכה</h1>
@@ -100,7 +189,7 @@
 
 <div class="updates-bar">
     <marquee direction="right" scrollamount="5" style="width: 85%;">
-        🚀 עודכן: מדדי ארצות הברית עודכנו לפי כל הכשרויות והוועדים | 📊 בקרוב: עדכוני מדדים עולמיים ומדדי ישראל...
+        🚀 חדש בפורטל: מדריך מקיף על השקעה במט"ח על פי ההלכה | 📊 עדכון מדדי ארצות הברית - רשימת המסלולים הכשרים המעודכנת לשנת 2026 עלתה לאתר | 🔔 בקרוב: סדרת מאמרים על קרנות כספיות...
     </marquee>
     </div>
 
@@ -118,41 +207,43 @@
         <div class="widget">
             <div class="widget-title">מאמרים אחרונים</div>
             <div class="ticker-container">
-                <div class="moving-list" id="sidebar-list">
+                <div class="moving-list">
                     <a href="mavo.html">1. מבוא לשוק ההון</a>
                     <a href="why-kosher.html">2. למה צריך מסלול כשר?</a>
-                    <a href="bonds-stocks-diff.html">3. אג"ח, מניות, מדדים יש הבדל</a>
+                    <a href="bonds-stocks.html">3. אג"ח, מניות, מדדים יש הבדל</a>
                     <a href="etf.html">4. תעודות סל</a>
                     <a href="futures.html">5. חוזים עתידיים</a>
                     <a href="options.html">6. אופציות</a>
                     <a href="heter-iska.html">7. היתר עסקה בקצרה</a>
-                    <a href="realestate-vs-stocks.html">8. נדל"ן מול שוק ההון – כל האמת</a>
-                    <a href="indirect-re-a.html">9. מסחר בנדל"ן דרך שוק ההון חלק א'</a>
-                    <a href="indirect-re-b.html">10. מסחר בנדל"ן דרך שוק ההון חלק ב'</a>
-                    <a href="funds-vs-bank.html">11. קרנות כספיות מול פקדונות</a>
-                    <a href="buy-fund-easy.html">12. מדריך קניית קרן כספית בקלות</a>
+                    <a href="realestate-truth.html">8. נדל"ן מול שוק ההון - כל האמת</a>
+                    <a href="re-part-a.html">9. מסחר בנדל"ן דרך שוק ההון ח"א</a>
+                    <a href="re-part-b.html">10. מסחר בנדל"ן דרך שוק ההון ח"ב</a>
+                    <a href="money-funds.html">11. קרנות כספיות מול פקדונות</a>
+                    <a href="buy-easy.html">12. מדריך קניית קרן כספית בקלות</a>
                 </div>
             </div>
-            <button onclick="toggleArticles()" style="width:100%; margin-top:10px; cursor:pointer; background:none; border:1px solid var(--blue); color:var(--blue); font-weight:bold; padding:5px;">לכל המאמרים (פתיחה בדף)</button>
             
-            <div id="all-articles-list">
-                <small>לחיצה על מאמר תעביר לדף המלא:</small>
-                <ul style="padding-right:20px; font-size:0.9rem;">
+            <button onclick="toggleArticles()" style="width:100%; margin-top:12px; cursor:pointer; background:none; border:1px solid var(--blue); color:var(--blue); font-weight:bold; padding:8px; border-radius:5px;">לחץ לצפייה בכל המאמרים</button>
+            
+            <div id="all-articles-container">
+                <ul class="article-link-list">
                     <li><a href="mavo.html">מבוא לשוק ההון</a></li>
-                    <li><a href="poskim.html">שיטות הפוסקים למעשה</a></li>
-                    <li><a href="forex.html">השקעה במט"ח</a></li>
-                </ul>
+                    <li><a href="why-kosher.html">למה צריך מסלול כשר?</a></li>
+                    <li><a href="bonds-stocks.html">אג"ח, מניות, מדדים - הבדלים</a></li>
+                    <li><a href="forex.html">כל הדרכים להשקעה במט"ח</a></li>
+                    <li><a href="kasruth.html">הבדלים בין הכשרויות</a></li>
+                    </ul>
             </div>
         </div>
 
         <div class="widget">
             <div class="widget-title">צור קשר</div>
-            <p style="font-size: 0.9rem;">
+            <p style="font-size: 0.95rem; color: #444;">
                 רוצים לבדוק את מסלול הפנסיה אם כשר או לברר אם תיק ההשקעות ללא חשש איסורים?
                 <br><br>
-                <b>אנחנו כאן</b>
+                <strong>אנחנו כאן</strong>
             </p>
-            <a href="contact.html" class="btn-full" style="display:block; text-align:center;">פנייה למערכת</a>
+            <a href="contact.html" class="btn-action" style="display:block; text-align:center; padding:10px;">פנייה למערכת</a>
         </div>
     </aside>
 
@@ -162,62 +253,65 @@
             <p>פורטל 'הון והלכה' נועד להנגיש את עולם הכלכלה ושוק ההון לציבור שומר המצוות, תוך הקפדה יתרה על גדרי ההלכה ופיקוח הדוק. בפורטל זה תמצאו את כל הידע הנדרש למסחר אקטיבי ואטרקטיבי, מבלי להתפשר על קוצו של יוד. אנו מרכזים עבורכם את המידע המעשי וההלכתי המונגש בשפה ברורה, כדי לאפשר לכל יהודי לנהל את הונו בביטחון ועל פי ההלכה.</p>
         </section>
 
-        <div class="slider-container" id="main-slider">
+        <div class="slider-wrapper" id="mainSlider">
             <div class="slide active">
-                <div class="slide-img" style="background-image: url('https://images.unsplash.com/photo-1611974717537-483584854552?q=80&w=1000&auto=format&fit=crop');"></div>
+                <div class="slide-img" style="background-image: url('https://images.unsplash.com/photo-1611974717537-483584854552?q=80&w=800');"></div>
                 <div class="slide-content">
                     <h3>מבוא לשוק ההון</h3>
-                    <p>כל מה שצריך לדעת על תחילת הדרך בעולם ההשקעות המודרני.</p>
-                    <a href="mavo.html" class="btn-full">למאמר המלא</a>
+                    <p>הצעדים הראשונים בעולם ההשקעות: איך זה עובד ואיך מתחילים נכון.</p>
+                    <a href="mavo.html" class="btn-action">למאמר המלא</a>
                 </div>
             </div>
             <div class="slide">
-                <div class="slide-img" style="background-image: url('https://images.unsplash.com/photo-1507733108721-447547437190?q=80&w=1000&auto=format&fit=crop');"></div>
+                <div class="slide-img" style="background-image: url('https://images.unsplash.com/photo-1507733108721-447547437190?q=80&w=800');"></div>
                 <div class="slide-content">
                     <h3>למה צריך מסלול כשר?</h3>
-                    <p>הסבר על החשיבות ההלכתית בבחירת מסלול מבוקר.</p>
-                    <a href="why-kosher.html" class="btn-full">למאמר המלא</a>
+                    <p>הסבר מעמיק על הצורך ההלכתי בפיקוח על מניות ומדדים.</p>
+                    <a href="why-kosher.html" class="btn-action">למאמר המלא</a>
                 </div>
             </div>
             <div class="slider-nav">
-                <button class="nav-btn" onclick="prevSlide()">&#10095;</button>
-                <button class="nav-btn" onclick="nextSlide()">&#10094;</button>
+                <button class="nav-arrow" onclick="changeSlide(1)">&#10095;</button>
+                <button class="nav-arrow" onclick="changeSlide(-1)">&#10094;</button>
             </div>
         </div>
 
         <section id="tracks">
+            <h2 style="text-align: center; color: var(--blue); margin-bottom: 30px;">מדריך המסלולים והאפיקים הכשרים</h2>
+
             <div class="track-group">
-                <div class="group-title">01 מנועי צמיחה - מדדי מניות</div>
+                <div class="group-header">01 מנועי צמיחה - מדדי מניות</div>
                 <div class="grid-3">
                     <a href="israel.html" class="track-card"><h4>מדדים בארץ</h4></a>
                     <a href="usa.html" class="track-card"><h4>מדדי ארצות הברית</h4></a>
                     <a href="world.html" class="track-card"><h4>מדדים עולמיים</h4></a>
                 </div>
             </div>
+
             <div class="track-group">
-                <div class="group-title">02 השקעות סולידיות</div>
+                <div class="group-header">02 השקעות סולידיות</div>
                 <div class="grid-3">
                     <a href="money-funds.html" class="track-card"><h4>קרנות כספיות</h4></a>
-                    <a href="etf-bond.html" class="track-card"><h4>קרנות סל אג"ח</h4></a>
+                    <a href="bond-etf.html" class="track-card"><h4>קרנות סל אג"ח</h4></a>
                     <a href="corp-bond.html" class="track-card"><h4>אג"ח קונצרני כשר</h4></a>
                 </div>
             </div>
 
             <div class="track-group">
-                <div class="group-title">03 שונות ונדל"ן</div>
+                <div class="group-header">03 שונות ונדל"ן</div>
                 <div class="grid-3">
                     <a href="forex-crypto.html" class="track-card"><h4>מט"ח וקריפטו</h4></a>
-                    <a href="gold.html" class="track-card"><h4>סחורות וזהב</h4></a>
-                    <a href="re.html" class="track-card"><h4>נדל"ן והשקעות שונות</h4></a>
+                    <a href="gold-commodities.html" class="track-card"><h4>סחורות וזהב</h4></a>
+                    <a href="re-invest.html" class="track-card"><h4>נדל"ן והשקעות שונות</h4></a>
                 </div>
             </div>
 
             <div class="track-group">
-                <div class="group-title">04 חיסכון ארוך טווח</div>
+                <div class="group-header">04 חיסכון ארוך טווח</div>
                 <div class="grid-3">
                     <a href="pension.html" class="track-card"><h4>פנסיה וגמל</h4></a>
-                    <a href="hishtalmut.html" class="track-card"><h4>השתלמות וחיסכון</h4></a>
-                    <a href="child.html" class="track-card"><h4>חיסכון לכל ילד</h4></a>
+                    <a href="study-fund.html" class="track-card"><h4>השתלמות וחיסכון</h4></a>
+                    <a href="child-save.html" class="track-card"><h4>חיסכון לכל ילד</h4></a>
                 </div>
             </div>
         </section>
@@ -225,34 +319,42 @@
 </div>
 
 <footer id="disclaimer">
-    <strong style="color: var(--gold); font-size: 1.4rem;">הון והלכה</strong>
-    <p>&copy; 2026 כלכלה מהדרין - כל הזכויות שמורות</p>
+    <strong style="color: var(--gold); font-size: 1.5rem;">הון והלכה</strong>
+    <p style="margin: 10px 0;">&copy; 2026 כלכלה מהדרין - כל הזכויות שמורות</p>
     <div class="footer-legal">
-        הבהרה חשובה: כל המידע המופיע באתר זה מובא למטרות אינפורמציה, הדרכה והעשרה בלבד, ואינו מהווה ייעוץ השקעות, המלצה לביצוע פעולה בניירות ערך או חוות דעת הלכתית סופית. אין לראות במידע זה תחליף לייעוץ מקצועי המותאם לנתוניו האישיים של כל אדם על ידי יועץ השקעות מוסמך או פסיקת רב מוסמך. המערכת אינה נושאת באחריות לכל נזק, הפסד או פגיעה שייגרמו, במישרין או בעקיפין, כתוצאה מהסתמכות על התכנים באתר זה. ההשקעה בשוק ההון טומנת בחובה סיכון להפסד כספי. 
+        <strong>הבהרה חשובה:</strong> כל המידע המופיע באתר זה מובא למטרות אינפורמציה, הדרכה והעשרה בלבד, ואינו מהווה ייעוץ השקעות, המלצה לביצוע פעולה בניירות ערך או חוות דעת הלכתית סופית. אין לראות במידע זה תחליף לייעוץ מקצועי המותאם לנתוניו האישיים של כל אדם על ידי יועץ השקעות מוסמך או פסיקת רב מוסמך. המערכת אינה נושאת באחריות לכל נזק, הפסד או פגיעה שייגרמו, במישרין או בעקיפין, כתוצאה מהסתמכות על התכנים באתר זה. ההשקעה בשוק ההון טומנת בחובה סיכון להפסד כספי.
     </div>
 </footer>
 
 <script>
-    /* לוגיקה לסליידר מרכזי */
+    /* לוגיקה להחלפת מאמרים בסליידר (כל 10 שניות) */
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     
-    function showSlide(n) {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (n + slides.length) % slides.length;
+    function showSlide(index) {
+        slides.forEach(s => s.classList.remove('active'));
+        currentSlide = (index + slides.length) % slides.length;
         slides[currentSlide].classList.add('active');
     }
 
-    function nextSlide() { showSlide(currentSlide + 1); }
-    function prevSlide() { showSlide(currentSlide - 1); }
+    function changeSlide(step) {
+        showSlide(currentSlide + step);
+    }
 
-    // מעבר אוטומטי כל 10 שניות
-    setInterval(nextSlide, 10000);
+    // מעבר אוטומטי
+    setInterval(() => {
+        changeSlide(1);
+    }, 10000);
 
-    /* לוגיקה לפתיחת כל המאמרים בדף */
+    /* פונקציה לפתיחת/סגירת רשימת כל המאמרים */
     function toggleArticles() {
-        const list = document.getElementById('all-articles-list');
-        list.style.display = (list.style.display === 'block') ? 'none' : 'block';
+        const container = document.getElementById('all-articles-container');
+        if (container.style.display === 'block') {
+            container.style.display = 'none';
+        } else {
+            container.style.display = 'block';
+            container.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 </script>
 

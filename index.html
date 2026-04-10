@@ -12,79 +12,68 @@
         .disclaimer-top-bar { background: #e1e8ed; color: #666; font-size: 0.8rem; text-align: center; padding: 8px; border-bottom: 1px solid #d1d9e0; position: fixed; top: 0; width: 100%; z-index: 2000; }
         .disclaimer-top-bar a { color: var(--blue); text-decoration: none; font-weight: bold; }
 
-        /* הדר עם אלמנטים של כסף ומדדים */
+        /* הדר - לוגו מעודכן ורקע אלמנטים */
         header { 
             background: var(--blue); 
             background-image: linear-gradient(rgba(26, 60, 94, 0.9), rgba(26, 60, 94, 0.9)), url('https://www.transparenttextures.com/patterns/currency.png');
             color: white; padding: 100px 20px 50px; text-align: center; border-bottom: 5px solid var(--gold); position: relative; overflow: hidden;
         }
-        /* עיטורי מדדים ברקע */
-        header::before { content: '📈 $ ₪ € 📈 $ ₪ €'; position: absolute; top: 50px; left: 0; width: 100%; opacity: 0.1; font-size: 2rem; letter-spacing: 50px; white-space: nowrap; pointer-events: none; }
-
         .logo-area { margin-bottom: 20px; }
         .logo-circle { width: 120px; height: 120px; border: 4px double var(--gold); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto; background: rgba(255,255,255,0.05); }
         .logo-main { color: var(--gold); font-weight: bold; font-size: 1.3rem; line-height: 1.1; }
-        .logo-halacha { color: white; font-size: 1.1rem; margin-top: 5px; border-top: 1px solid var(--gold); padding-top: 2px; }
-        header h1 { font-size: 1rem; color: #bdc3c7; margin-top: 15px; font-weight: normal; }
+        .logo-line { width: 60%; height: 1px; background: var(--gold); margin: 5px 0; }
+        
+        header h1 { font-size: 2.2rem; margin: 15px 0 5px; color: white; }
+        header p { font-size: 1.1rem; color: #bdc3c7; margin: 0; }
 
-        /* שורת עדכונים (ניתנת למחיקה בקלות) */
+        /* אזור עדכונים עם הערות מוסתרות */
         .updates-bar { background: var(--blue-dark); color: #64ffda; padding: 12px; border-bottom: 2px solid var(--gold); font-size: 0.95rem; display: flex; align-items: center; justify-content: center; position: sticky; top: 35px; z-index: 1001; }
-        .updates-label { border: 1px solid #64ffda; padding: 2px 8px; border-radius: 4px; margin-left: 15px; font-size: 0.75rem; font-weight: bold; }
 
         /* ניווט */
         nav { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 81px; z-index: 1000; height: 55px; display: flex; align-items: center; justify-content: center; }
-        nav a { margin: 0 15px; text-decoration: none; color: var(--blue); font-weight: bold; font-size: 1rem; }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--blue); font-weight: bold; }
 
         .container { max-width: 1250px; margin: auto; padding: 30px 20px; display: flex; gap: 30px; }
         
-        /* צד שמאל - סרגלים */
+        /* צד שמאל */
         .sidebar-left { flex: 3; display: flex; flex-direction: column; gap: 20px; }
         .widget { background: var(--white); border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-right: 5px solid var(--blue); }
         .widget-title { color: var(--blue); font-weight: bold; border-bottom: 2px solid var(--light); padding-bottom: 10px; margin-bottom: 15px; }
         
-        /* ניווט מהיר למסלולים */
-        .quick-nav a { display: block; padding: 8px 0; color: #555; text-decoration: none; border-bottom: 1px solid #f9f9f9; font-size: 0.95rem; }
-        .quick-nav a:hover { color: var(--gold); }
-
-        /* סרט נע מאמרים */
-        .ticker-container { height: 350px; overflow: hidden; position: relative; }
-        .moving-list { position: absolute; width: 100%; animation: scrollUp 30s linear infinite; }
+        /* סרט נע מאמרים בצד */
+        .ticker-container { height: 300px; overflow: hidden; position: relative; }
+        .moving-list { position: absolute; width: 100%; animation: scrollUp 40s linear infinite; }
         .moving-list:hover { animation-play-state: paused; }
-        .moving-list a { display: block; padding: 10px; border-bottom: 1px solid #eee; text-decoration: none; color: #444; font-size: 0.9rem; }
-        @keyframes scrollUp { 0% { top: 100%; } 100% { top: -200%; } }
+        .moving-list a { display: block; padding: 8px; border-bottom: 1px solid #eee; text-decoration: none; color: #444; font-size: 0.9rem; }
+        @keyframes scrollUp { 0% { top: 100%; } 100% { top: -250%; } }
 
-        /* מרכז - תוכן */
+        /* רשימת כל המאמרים - מוסתרת כברירת מחדל */
+        #all-articles-list { display: none; margin-top: 15px; background: #f9f9f9; padding: 10px; border-radius: 8px; }
+        
+        /* תוכן מרכזי */
         .main-content { flex: 9; }
-        
-        /* אודות הפורטל */
         .about-box { background: var(--white); padding: 35px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-left: 8px solid var(--blue); }
-        .about-box h2 { color: var(--blue); margin-top: 0; }
-        .about-box p { font-size: 1.1rem; text-align: justify; }
 
-        /* סליידר מאמרים "קולי" */
-        .article-slider { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 40px; }
-        .slide { display: flex; min-height: 350px; }
-        .slide-img { flex: 1; background-size: cover; background-position: center; min-height: 350px; background-color: #ddd; }
+        /* סליידר מאמרים מרכזי */
+        .slider-container { position: relative; background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 40px; min-height: 350px; }
+        .slide { display: none; flex-direction: row; height: 100%; }
+        .slide.active { display: flex; }
+        .slide-img { flex: 1; background-size: cover; background-position: center; min-height: 350px; }
         .slide-content { flex: 1; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
-        .slide-content h3 { color: var(--blue); font-size: 1.8rem; margin: 0 0 15px 0; }
-        .slide-content p { color: #666; margin-bottom: 25px; }
-        .btn-full { background: var(--gold); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; align-self: flex-start; }
-
-        /* 12 קוביות מדריך המסלולים */
-        .section-header { text-align: center; margin-bottom: 30px; position: relative; }
-        .section-header::after { content: ''; display: block; width: 80px; height: 3px; background: var(--gold); margin: 10px auto; }
+        .slide-content h3 { color: var(--blue); font-size: 1.6rem; margin: 0 0 15px; }
+        .btn-full { background: var(--gold); color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; align-self: flex-start; }
         
+        /* חצי שליטה לסליידר */
+        .slider-nav { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); padding: 0 10px; box-sizing: border-box; pointer-events: none; }
+        .nav-btn { background: rgba(0,0,0,0.3); color: white; border: none; padding: 15px; cursor: pointer; pointer-events: auto; border-radius: 50%; transition: 0.3s; }
+        .nav-btn:hover { background: var(--blue); }
+
+        /* 12 קוביות */
         .track-group { margin-bottom: 40px; }
         .group-title { background: var(--blue); color: white; padding: 12px 20px; border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; }
-        .group-num { color: var(--gold); font-weight: bold; font-size: 1.4rem; margin-left: 15px; }
-        
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .track-card { background: var(--white); padding: 30px 20px; border-radius: 12px; text-align: center; text-decoration: none; color: inherit; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-bottom: 4px solid var(--gold); transition: 0.3s; }
-        .track-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-        .track-card h4 { margin: 0 0 10px 0; color: var(--blue); }
-        .track-link { color: var(--teal); font-weight: bold; font-size: 0.85rem; display: block; margin-top: 15px; }
+        .track-card { background: var(--white); padding: 30px 20px; border-radius: 12px; text-align: center; text-decoration: none; color: inherit; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-bottom: 4px solid var(--gold); }
 
-        /* פוטר */
         footer { background: var(--blue-dark); color: #bdc3c7; padding: 60px 20px; text-align: center; margin-top: 50px; border-top: 5px solid var(--gold); }
         .footer-legal { max-width: 1000px; margin: 30px auto 0; font-size: 0.85rem; text-align: justify; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; }
 
@@ -100,25 +89,25 @@
 <header>
     <div class="logo-area">
         <div class="logo-circle">
-            <span class="logo-main">כלכלה<br>מהדרין</span>
-            <span class="logo-halacha">הלכה</span>
+            <span class="logo-main">כלכלה</span>
+            <div class="logo-line"></div>
+            <span class="logo-main">מהדרין</span>
         </div>
     </div>
-    <div style="font-size: 2.2rem; font-weight: bold; color: white;">הון והלכה</div>
-    <h1>שוק ההון, פנסיה והשקעות על פי ההלכה</h1>
+    <h1>הון והלכה</h1>
+    <p>שוק ההון, פנסיה והשקעות על פי ההלכה</p>
 </header>
 
 <div class="updates-bar">
-    <span class="updates-label">עדכונים חיים</span>
-    <marquee direction="right" scrollamount="5" style="width: 80%;">
+    <marquee direction="right" scrollamount="5" style="width: 85%;">
         🚀 עודכן: מדדי ארצות הברית עודכנו לפי כל הכשרויות והוועדים | 📊 בקרוב: עדכוני מדדים עולמיים ומדדי ישראל...
     </marquee>
-</div>
+    </div>
 
 <nav>
     <a href="index.html">דף הבית</a>
     <a href="#about">אודות</a>
-    <a href="all-articles.html">מאמרים</a>
+    <a href="javascript:void(0)" onclick="toggleArticles()">כל המאמרים</a>
     <a href="#tracks">מסלולים כשרים</a>
     <a href="contact.html">צור קשר</a>
 </nav>
@@ -126,123 +115,146 @@
 <div class="container">
 
     <aside class="sidebar-left">
-        <div class="widget quick-nav">
-            <div class="widget-title">ניווט מהיר למסלולים</div>
-            <a href="#group01">מדדי מניות</a>
-            <a href="#group02">אג"ח וכספיות</a>
-            <a href="#group03">שונות ונדל"ן</a>
-            <a href="#group04">פנסיה וגמל</a>
-        </div>
-
         <div class="widget">
             <div class="widget-title">מאמרים אחרונים</div>
             <div class="ticker-container">
-                <div class="moving-list">
+                <div class="moving-list" id="sidebar-list">
                     <a href="mavo.html">1. מבוא לשוק ההון</a>
                     <a href="why-kosher.html">2. למה צריך מסלול כשר?</a>
-                    <a href="trading-halacha.html">3. האם מותר לסחור ללא כשרות?</a>
-                    <a href="ownership.html">&nbsp;&nbsp; - הגדרת בעלות בחברה</a>
-                    <a href="majority-goyim.html">&nbsp;&nbsp; - סוגיית רוב גויים</a>
-                    <a href="stocks-vs-bonds.html">&nbsp;&nbsp; - אג"ח מול מניות</a>
-                    <a href="poskim-methods.html">&nbsp;&nbsp; - שיטות הפוסקים למעשה</a>
-                    <a href="synthetic-funds.html">4. פתרונות: קרנות סינטטיות</a>
-                    <a href="etf-guide.html">&nbsp;&nbsp; - תעודות סל וחוזים</a>
-                    <a href="heter-iska.html">5. היתר עסקה בקצרה</a>
-                    <a href="realestate-truth.html">6. נדל"ן מול שוק ההון: האמת</a>
-                    <a href="indirect-realestate.html">7. מסחר בנדל"ן דרך שוק ההון</a>
-                    <a href="money-funds-lies.html">8. שקרי הבנקים בקרנות כספיות</a>
-                    <a href="kaspi-guide.html">9. מדריך קנייה בקלות</a>
-                    <a href="kosher-diffs.html">10. הבדלים בין הכשרויות</a>
-                    <a href="forex-investing.html">11. בלעדי: השקעה במט"ח</a>
+                    <a href="bonds-stocks-diff.html">3. אג"ח, מניות, מדדים יש הבדל</a>
+                    <a href="etf.html">4. תעודות סל</a>
+                    <a href="futures.html">5. חוזים עתידיים</a>
+                    <a href="options.html">6. אופציות</a>
+                    <a href="heter-iska.html">7. היתר עסקה בקצרה</a>
+                    <a href="realestate-vs-stocks.html">8. נדל"ן מול שוק ההון – כל האמת</a>
+                    <a href="indirect-re-a.html">9. מסחר בנדל"ן דרך שוק ההון חלק א'</a>
+                    <a href="indirect-re-b.html">10. מסחר בנדל"ן דרך שוק ההון חלק ב'</a>
+                    <a href="funds-vs-bank.html">11. קרנות כספיות מול פקדונות</a>
+                    <a href="buy-fund-easy.html">12. מדריך קניית קרן כספית בקלות</a>
                 </div>
             </div>
-            <a href="all-articles.html" style="display:block; text-align:center; margin-top:15px; color:var(--blue); font-weight:bold; text-decoration:none;">לכל המאמרים >></a>
+            <button onclick="toggleArticles()" style="width:100%; margin-top:10px; cursor:pointer; background:none; border:1px solid var(--blue); color:var(--blue); font-weight:bold; padding:5px;">לכל המאמרים (פתיחה בדף)</button>
+            
+            <div id="all-articles-list">
+                <small>לחיצה על מאמר תעביר לדף המלא:</small>
+                <ul style="padding-right:20px; font-size:0.9rem;">
+                    <li><a href="mavo.html">מבוא לשוק ההון</a></li>
+                    <li><a href="poskim.html">שיטות הפוסקים למעשה</a></li>
+                    <li><a href="forex.html">השקעה במט"ח</a></li>
+                </ul>
+            </div>
         </div>
 
         <div class="widget">
             <div class="widget-title">צור קשר</div>
-            <p style="font-size: 0.9rem;">יש לכם שאלה הלכתית או כלכלית? אנחנו כאן.</p>
-            <a href="contact.html" class="btn-full" style="display:block; text-align:center; padding:8px;">פנייה למערכת</a>
+            <p style="font-size: 0.9rem;">
+                רוצים לבדוק את מסלול הפנסיה אם כשר או לברר אם תיק ההשקעות ללא חשש איסורים?
+                <br><br>
+                <b>אנחנו כאן</b>
+            </p>
+            <a href="contact.html" class="btn-full" style="display:block; text-align:center;">פנייה למערכת</a>
         </div>
     </aside>
 
     <main class="main-content">
         <section class="about-box" id="about">
             <h2>אודות הפורטל</h2>
-            <p>
-                פורטל <strong>'הון והלכה'</strong> נועד להנגיש את עולם הכלכלה ושוק ההון לציבור שומר המצוות, תוך הקפדה יתרה על גדרי ההלכה ופיקוח הדוק. 
-                בפורטל זה תמצאו את כל הידע הנדרש למסחר אקטיבי ואטרקטיבי, מבלי להתפשר על קוצו של יוד. 
-                אנו מרכזים עבורכם את המידע המעשי וההלכתי המונגש בשפה ברורה, כדי לאפשר לכל יהודי לנהל את הונו בביטחון ועל פי ההלכה. 
-            </p>
+            <p>פורטל 'הון והלכה' נועד להנגיש את עולם הכלכלה ושוק ההון לציבור שומר המצוות, תוך הקפדה יתרה על גדרי ההלכה ופיקוח הדוק. בפורטל זה תמצאו את כל הידע הנדרש למסחר אקטיבי ואטרקטיבי, מבלי להתפשר על קוצו של יוד. אנו מרכזים עבורכם את המידע המעשי וההלכתי המונגש בשפה ברורה, כדי לאפשר לכל יהודי לנהל את הונו בביטחון ועל פי ההלכה.</p>
         </section>
 
-        <div class="article-slider">
+        <div class="slider-container" id="main-slider">
+            <div class="slide active">
+                <div class="slide-img" style="background-image: url('https://images.unsplash.com/photo-1611974717537-483584854552?q=80&w=1000&auto=format&fit=crop');"></div>
+                <div class="slide-content">
+                    <h3>מבוא לשוק ההון</h3>
+                    <p>כל מה שצריך לדעת על תחילת הדרך בעולם ההשקעות המודרני.</p>
+                    <a href="mavo.html" class="btn-full">למאמר המלא</a>
+                </div>
+            </div>
             <div class="slide">
-                <div class="slide-img" style="background-image: url('https://images.unsplash.com/photo-1507733108721-447547437190?q=80&w=1000&auto=format&fit=crop');"></div> <div class="slide-content">
+                <div class="slide-img" style="background-image: url('https://images.unsplash.com/photo-1507733108721-447547437190?q=80&w=1000&auto=format&fit=crop');"></div>
+                <div class="slide-content">
                     <h3>למה צריך מסלול כשר?</h3>
-                    <p>הסבר מקיף על הבעיות ההלכתיות המצויות בשוק ההון המודרני והצורך בפיקוח הלכתי הדוק על מסלולי ההשקעה. [cite: 2]</p>
+                    <p>הסבר על החשיבות ההלכתית בבחירת מסלול מבוקר.</p>
                     <a href="why-kosher.html" class="btn-full">למאמר המלא</a>
                 </div>
+            </div>
+            <div class="slider-nav">
+                <button class="nav-btn" onclick="prevSlide()">&#10095;</button>
+                <button class="nav-btn" onclick="nextSlide()">&#10094;</button>
             </div>
         </div>
 
         <section id="tracks">
-            <div class="section-header">
-                <h2 style="font-size: 1.8rem; color: var(--blue);">מדריך המסלולים והאפיקים הכשרים</h2> [cite: 11, 50]
-            </div>
-
-            <div class="track-group" id="group01">
-                <div class="group-title"><span class="group-num">01</span> מנועי צמיחה - מדדי מניות</div> [cite: 5, 45]
+            <div class="track-group">
+                <div class="group-title">01 מנועי צמיחה - מדדי מניות</div>
                 <div class="grid-3">
-                    <a href="israel-indices.html" class="track-card"><h4>מדדים בארץ</h4><span class="track-link">לרשימת המסלולים >></span></a> [cite: 46]
-                    <a href="tracks.html" class="track-card" style="border-color: var(--blue);"><h4>מדדי ארצות הברית</h4><span class="track-link" style="color:var(--gold)">עודכן - לכניסה >></span></a> [cite: 51]
-                    <a href="world-indices.html" class="track-card"><h4>מדדים עולמיים</h4><span class="track-link">לרשימת המסלולים >></span></a> [cite: 52]
+                    <a href="israel.html" class="track-card"><h4>מדדים בארץ</h4></a>
+                    <a href="usa.html" class="track-card"><h4>מדדי ארצות הברית</h4></a>
+                    <a href="world.html" class="track-card"><h4>מדדים עולמיים</h4></a>
+                </div>
+            </div>
+            <div class="track-group">
+                <div class="group-title">02 השקעות סולידיות</div>
+                <div class="grid-3">
+                    <a href="money-funds.html" class="track-card"><h4>קרנות כספיות</h4></a>
+                    <a href="etf-bond.html" class="track-card"><h4>קרנות סל אג"ח</h4></a>
+                    <a href="corp-bond.html" class="track-card"><h4>אג"ח קונצרני כשר</h4></a>
                 </div>
             </div>
 
-            <div class="track-group" id="group02">
-                <div class="group-title"><span class="group-num">02</span> השקעות סולידיות</div> [cite: 29, 47]
+            <div class="track-group">
+                <div class="group-title">03 שונות ונדל"ן</div>
                 <div class="grid-3">
-                    <a href="money-funds.html" class="track-card"><h4>קרנות כספיות</h4><span class="track-link">לרשימת המסלולים >></span></a> [cite: 32, 54]
-                    <a href="bond-etf.html" class="track-card"><h4>קרנות סל אג"ח</h4><span class="track-link">לרשימת המסלולים >></span></a> [cite: 33, 55]
-                    <a href="corp-bond.html" class="track-card"><h4>אג"ח קונצרני כשר</h4><span class="track-link">לרשימת המסלולים >></span></a> [cite: 34, 56]
+                    <a href="forex-crypto.html" class="track-card"><h4>מט"ח וקריפטו</h4></a>
+                    <a href="gold.html" class="track-card"><h4>סחורות וזהב</h4></a>
+                    <a href="re.html" class="track-card"><h4>נדל"ן והשקעות שונות</h4></a>
                 </div>
             </div>
 
-            <div class="track-group" id="group03">
-                <div class="group-title"><span class="group-num">03</span> שונות ונדל"ן</div> [cite: 36]
+            <div class="track-group">
+                <div class="group-title">04 חיסכון ארוך טווח</div>
                 <div class="grid-3">
-                    <a href="forex-crypto.html" class="track-card"><h4>מט"ח וקריפטו</h4><span class="track-link">לרשימת המסלולים >></span></a> [cite: 37]
-                    <a href="gold.html" class="track-card"><h4>סחורות וזהב</h4><span class="track-link">לרשימת המסלולים >></span></a> [cite: 38]
-                    <a href="real-estate.html" class="track-card"><h4>נדל"ן והשקעות שונות</h4><span class="track-link">לרשימת המסלולים >></span></a> [cite: 40]
-                </div>
-            </div>
-
-            <div class="track-group" id="group04">
-                <div class="group-title"><span class="group-num">04</span> חיסכון ארוך טווח</div> [cite: 14, 41]
-                <div class="grid-3">
-                    <a href="pension.html" class="track-card"><h4>פנסיה וגמל</h4><span class="track-link">לרשימת המסלולים >></span></a> [cite: 15, 42]
-                    <a href="hishtalmut.html" class="track-card"><h4>השתלמות וחיסכון</h4><span class="track-link">לרשימת המסלולים >></span></a> [cite: 21, 43]
-                    <a href="child-saving.html" class="track-card"><h4>חיסכון לכל ילד</h4><span class="track-link">לרשימת המסלולים >></span></a> [cite: 22, 44]
+                    <a href="pension.html" class="track-card"><h4>פנסיה וגמל</h4></a>
+                    <a href="hishtalmut.html" class="track-card"><h4>השתלמות וחיסכון</h4></a>
+                    <a href="child.html" class="track-card"><h4>חיסכון לכל ילד</h4></a>
                 </div>
             </div>
         </section>
     </main>
-
 </div>
 
 <footer id="disclaimer">
-    <div style="margin-bottom: 20px;">
-        <div class="logo-circle" style="width: 80px; height: 80px; border-width: 2px;">
-            <span class="logo-main" style="font-size: 0.9rem;">כלכלה<br>מהדרין</span>
-        </div>
-    </div>
     <strong style="color: var(--gold); font-size: 1.4rem;">הון והלכה</strong>
-    <p>&copy; 2026 כלכלה מהדרין - כל הזכויות שמורות</p> [cite: 23]
+    <p>&copy; 2026 כלכלה מהדרין - כל הזכויות שמורות</p>
     <div class="footer-legal">
-        <strong>הבהרה חשובה:</strong> כל המידע המופיע באתר זה מובא למטרות אינפורמציה, הדרכה והעשרה בלבד, ואינו מהווה ייעוץ השקעות, המלצה לביצוע פעולה בניירות ערך או חוות דעת הלכתית סופית. אין לראות במידע זה תחליף לייעוץ מקצועי המותאם לנתוניו האישיים של כל אדם על ידי יועץ השקעות מוסמך או פסיקת רב מוסמך. המערכת אינה נושאת באחריות לכל נזק, הפסד או פגיעה שייגרמו, במישרין או בעקיפין, כתוצאה מהסתמכות על התכנים באתר זה. ההשקעה בשוק ההון טומנת בחובה סיכון להפסד כספי. [cite: 23]
+        הבהרה חשובה: כל המידע המופיע באתר זה מובא למטרות אינפורמציה, הדרכה והעשרה בלבד, ואינו מהווה ייעוץ השקעות, המלצה לביצוע פעולה בניירות ערך או חוות דעת הלכתית סופית. אין לראות במידע זה תחליף לייעוץ מקצועי המותאם לנתוניו האישיים של כל אדם על ידי יועץ השקעות מוסמך או פסיקת רב מוסמך. המערכת אינה נושאת באחריות לכל נזק, הפסד או פגיעה שייגרמו, במישרין או בעקיפין, כתוצאה מהסתמכות על התכנים באתר זה. ההשקעה בשוק ההון טומנת בחובה סיכון להפסד כספי. 
     </div>
 </footer>
+
+<script>
+    /* לוגיקה לסליידר מרכזי */
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    
+    function showSlide(n) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (n + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() { showSlide(currentSlide + 1); }
+    function prevSlide() { showSlide(currentSlide - 1); }
+
+    // מעבר אוטומטי כל 10 שניות
+    setInterval(nextSlide, 10000);
+
+    /* לוגיקה לפתיחת כל המאמרים בדף */
+    function toggleArticles() {
+        const list = document.getElementById('all-articles-list');
+        list.style.display = (list.style.display === 'block') ? 'none' : 'block';
+    }
+</script>
 
 </body>
 </html>

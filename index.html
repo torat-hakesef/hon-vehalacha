@@ -12,7 +12,7 @@
         .top-notice { background: #e1e8ed; color: #666; font-size: 0.8rem; text-align: center; padding: 8px; border-bottom: 1px solid #d1d9e0; position: fixed; top: 0; width: 100%; z-index: 2000; }
         .top-notice a { color: inherit; text-decoration: underline; cursor: pointer; }
 
-        /* הדר ולוגו עם רקע מטבעות וגרפים */
+        /* הדר ולוגו - עם אלמנט המטבעות והגרפים */
         header { 
             background: var(--blue); 
             background-image: linear-gradient(rgba(26, 60, 94, 0.9), rgba(26, 60, 94, 0.9)), url('https://www.transparenttextures.com/patterns/currency.png');
@@ -72,28 +72,23 @@
         .slide-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; }
         .slide-img::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%); }
 
-        /* עיצוב מיוחד ללוגואים במאמר 16 */
-        .logo-grid-container { 
+        /* עיצוב גריד לוגואים למאמר 16 */
+        .logo-grid { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; 
-            padding: 30px; box-sizing: border-box; z-index: 1; background: #fdfdfd; 
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; 
+            padding: 40px; box-sizing: border-box; z-index: 1; background: #f9f9f9;
         }
-        .logo-item { 
-            background: white; border-radius: 10px; display: flex; align-items: center; 
-            justify-content: center; padding: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
-            border: 1px solid #eee;
+        .logo-grid-item { 
+            background: white; border-radius: 10px; border: 1px solid #eee;
+            display: flex; align-items: center; justify-content: center; padding: 10px;
         }
-        .logo-item img { max-width: 90%; max-height: 85%; object-fit: contain; }
+        .logo-grid-item img { max-width: 80%; max-height: 80%; object-fit: contain; }
 
         .slide-txt { position: relative; z-index: 2; width: 60%; height: 100%; padding: 50px; display: flex; flex-direction: column; justify-content: center; color: white; }
         .slide-txt h3 { color: var(--gold); font-size: 2.2rem; margin: 0 0 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         .slide-txt .sub-h { font-size: 0.9rem; color: #64ffda; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; font-weight: bold; }
         .slide-txt p { font-size: 1.1rem; margin-bottom: 25px; color: #f0f0f0; }
-
-        .slide.light-bg .slide-txt { color: var(--blue-dark); }
-        .slide.light-bg .slide-txt p { color: #555; }
-        .slide.light-bg .slide-txt h3 { text-shadow: none; }
-
+        
         .btn-go { background: var(--gold); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; align-self: flex-start; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .btn-go:hover { background: white; color: var(--blue-dark); }
         
@@ -110,7 +105,7 @@
         footer { background: var(--blue-dark); color: #bdc3c7; padding: 60px 20px; text-align: center; border-top: 5px solid var(--gold); margin-top: 50px; }
         .legal { max-width: 1000px; margin: 30px auto 0; font-size: 0.85rem; text-align: justify; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; }
 
-        @media (max-width: 900px) { .container { flex-direction: column; } .grid { grid-template-columns: 1fr; } .slide-txt { width: 100%; padding: 30px; text-align: center; } .btn-go { align-self: center; } .logo-grid-container { grid-template-columns: 1fr; overflow-y: auto; } }
+        @media (max-width: 900px) { .container { flex-direction: column; } .grid { grid-template-columns: 1fr; } .slide-txt { width: 100%; padding: 30px; text-align: center; } .btn-go { align-self: center; } }
     </style>
 </head>
 <body>
@@ -150,7 +145,7 @@
             <div class="ticker-wrap">
                 <div class="ticker-list" id="tickerList"></div>
             </div>
-            <button onclick="toggleArticles()" style="width:100%; margin-top:10px; cursor:pointer; background:none; border:1px solid var(--blue); color:var(--blue); font-weight:bold; padding:8px; border-radius:5px;">פתיחת כל המאמרים</button>
+            <button onclick="toggleArticles()" style="width:100%; margin-top:10px; cursor:pointer; background:none; border:1px solid var(--blue); color:var(--blue); font-weight:bold; padding:8px; border-radius:5px;">פתיחת כל המאמרים בדף זה</button>
             <div id="full-article-list">
                 <ul id="fullListContainer"></ul>
             </div>
@@ -171,7 +166,7 @@
     <main class="main-content">
         <section class="about-box" id="about">
             <h2>אודות הפורטל</h2>
-            <p>פורטל 'הון והלכה' נועד להנגיש את עולם הכלכלה ושוק ההון לציבור שומר המצוות, תוך הקפדה יתרה על גדרי ההלכה ופיקוח הדוק. בפורטל זה תמצאו את כל הידע הנדרש למסחר אקטיבי ואטרקטיבי, מבלי להתפשר על קוצו של יוד.</p>
+            <p>פורטל 'הון והלכה' נועד להנגיש את עולם הכלכלה ושוק ההון לציבור שומר המצוות, תוך הקפדה יתרה על גדרי ההלכה ופיקוח הדוק. בפורטל זה תמצאו את כל הידע הנדרש למסחר אקטיבי ואטרקטיבי, מבלי להתפשר על קוצו של יוד. אנו מרכזים עבורכם את המידע המעשי וההלכתי המונגש בשפה ברורה, כדי לאפשר לכל יהודי לנהל את הונו בביטחון ועל פי ההלכה.</p>
         </section>
 
         <div class="slider-box" id="mainSlider">
@@ -191,6 +186,22 @@
                     <a href="world.html" class="card"><h4>מדדים עולמיים</h4></a>
                 </div>
             </div>
+            <div class="track-section">
+                <div class="track-head">02 השקעות סולידיות</div>
+                <div class="grid">
+                    <a href="money-funds.html" class="card"><h4>קרנות כספיות</h4></a>
+                    <a href="bond-etf.html" class="card"><h4>קרנות סל אג"ח</h4></a>
+                    <a href="corp-bond.html" class="card"><h4>אג"ח קונצרני כשר</h4></a>
+                </div>
+            </div>
+            <div class="track-section">
+                <div class="track-head">03 שונות ונדל"ן</div>
+                <div class="grid">
+                    <a href="forex-crypto.html" class="card"><h4>מט"ח וקריפטו</h4></a>
+                    <a href="gold.html" class="card"><h4>סחורות וזהב</h4></a>
+                    <a href="re-invest.html" class="card"><h4>נדל"ן והשקעות שונות</h4></a>
+                </div>
+            </div>
         </section>
     </main>
 </div>
@@ -199,7 +210,7 @@
     <strong style="color: var(--gold); font-size: 1.5rem;">הון והלכה</strong>
     <p>&copy; 2026 כלכלה מהדרין - כל הזכויות שמורות</p>
     <div class="legal" id="disclaimer">
-        <strong>הבהרה חשובה:</strong> כל המידע המופיע באתר זה מובא למטרות אינפורמציה בלבד...
+        <strong>הבהרה חשובה:</strong> כל המידע המופיע באתר זה מובא למטרות אינפורמציה, הדרכה והעשרה בלבד...
     </div>
 </footer>
 
@@ -211,26 +222,26 @@
         { id: 3, title: "האם מותר לסחור? - הגדרת בעלות", url: "halacha-series-1.html", desc: "בחינת מעמד המשקיע כבעלים בחברה על פי ההלכה.", img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200" },
         { id: 4, title: "האם מותר לסחור? - רוב גויים", url: "halacha-series-2.html", desc: "המשמעות ההלכתית של השקעה בחברות שרוב בעליהן אינם יהודים.", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200" },
         { id: 5, title: "אג\"ח, מניות, מדדים יש הבדל", url: "bonds-stocks-diff.html", desc: "הבדלים מהותיים בין סוגי הנכסים השונים מבחינה הלכתית.", img: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1200" },
-        { id: 6, title: "האם מותר לסחור? - שיטות הפוסקים", url: "halacha-series-3.html", desc: "סיכום דעות גדולי הפוסקים בדורנו בנושא השקעות.", img: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=1200" },
+        { id: 6, title: "האם מותר לסחור? - שיטות הפוסקים", url: "halacha-series-3.html", desc: "ספרי קודש והלכה יהודית פתוחים - שולחן ערוך וגדולי הפוסקים.", img: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=1200" },
         { type: "cat", title: "פתרונות להלכה" },
         { id: 7, title: "פתרונות: תעודות סל", url: "etf.html", desc: "כיצד פועלות תעודות הסל הכשרות ומה הפיקוח עליהן.", img: "https://images.unsplash.com/photo-1535320903710-d993d3d77d29?q=80&w=1200" },
         { id: 8, title: "פתרונות: חוזים עתידיים", url: "futures.html", desc: "היבטים הלכתיים במסחר בנגזרים וחוזים.", img: "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1200" },
-        { id: 9, title: "פתרונות: אופציות", url: "options.html", desc: "האם מותר לקנות ולמכור אופציות ללא היתר עסקה?", img: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=1200" },
-        { id: 10, title: "היתר עסקה בקצרה", url: "heter-iska.html", desc: "מהו היתר עסקה ואיך הוא פותר בעיות של ריבית בהשקעות.", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200" },
+        { id: 9, title: "פתרונות: אופציות", url: "options.html", desc: "שילוב של גרפים פיננסיים עם ניירות ומסמכי ניתוח.", img: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=1200" },
+        { id: 10, title: "היתר עסקה בקצרה", url: "heter-iska.html", desc: "מסמכי היתר עסקה ומחשבון - פתרון הריבית בהשקעות.", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200" },
         { id: 11, title: "נדל\"ן מול שוק ההון – כל האמת", url: "realestate-vs-stocks.html", desc: "השוואה מפורטת בין השקעה בנכסים פיזיים לבורסה.", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200" },
-        { id: 12, title: "מסחר בנדל\"ן דרך שוק ההון א'", url: "re-trading-a.html", desc: "השקעה בקרנות ריט ומניות נדל\"ן.", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200" },
-        { id: 13, title: "מסחר בנדל\"ן דרך שוק ההון ב'", url: "re-trading-b.html", desc: "המשך הסקירה על מכשירי השקעה בנדל\"ן בורסאי.", img: "https://images.unsplash.com/photo-1460472178825-e51c0623be5f?q=80&w=1200" },
+        { id: 12, title: "מסחר בנדל\"ן דרך שוק ההון חלק א'", url: "re-trading-a.html", desc: "השקעה בקרנות ריט ומניות נדל\"ן.", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200" },
+        { id: 13, title: "מסחר בנדל\"ן דרך שוק ההון חלק ב'", url: "re-trading-b.html", desc: "שילוב של נדל\"ן מודרני עם מדדים ונתוני בורסה.", img: "https://images.unsplash.com/photo-1460472178825-e51c0623be5f?q=80&w=1200" },
         { id: 14, title: "קרנות כספיות מול פקדונות", url: "funds-vs-deposits.html", desc: "היכן כדאי לשמור את הכסף הנזיל מבחינת תשואה והלכה.", img: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=1200" },
-        { id: 15, title: "מדריך קנייה בקלות", url: "buy-fund-easy.html", desc: "צעד אחר צעד לביצוע קנייה בחשבון הבנק.", img: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200" },
+        { id: 15, title: "מדריך קניית קרן כספית בקלות", url: "buy-fund-easy.html", desc: "צעד אחר צעד לביצוע קנייה בחשבון הבנק או בבית השקעות.", img: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200" },
         { 
             id: 16, 
             title: "הבדלים בין הכשרויות", 
             url: "kosher-diffs.html", 
             desc: "הבנת רמות הפיקוח השונות של ועדי הכשרות בשוק ההון.", 
-            isLogoSlide: true,
-            logos: ["tshua.png", "vaad.png", "badatz.png", "SITE_LOGO"] 
+            isLogoSlide: true, 
+            logos: ["tshua.png", "vaad.png", "badatz.png"] // שמות הקבצים שלך
         },
-        { id: 17, title: "השקעה במט\"ח", url: "forex-invest.html", desc: "הצמדה לדולר, אירו ומטבעות זרים בצורה כשרה.", img: "https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?q=80&w=1200" }
+        { id: 17, title: "כל הדרכים להשקעה במט\"ח", url: "forex-invest.html", desc: "הצמדה לדולר, אירו ומטבעות זרים בצורה כשרה.", img: "https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?q=80&w=1200" }
     ];
 
     const tickerList = document.getElementById('tickerList');
@@ -240,6 +251,7 @@
     function initContent() {
         let tickerHTML = '';
         let fullHTML = '';
+        
         articles.forEach((art, i) => {
             if (art.type === 'cat') {
                 tickerHTML += `<span class="ticker-cat">${art.title}</span>`;
@@ -249,21 +261,32 @@
                 fullHTML += `<li><a href="${art.url}">${art.title}</a></li>`;
                 
                 const slide = document.createElement('div');
-                slide.className = `slide ${i === 0 ? 'active' : ''} ${art.isLogoSlide ? 'light-bg' : ''}`;
+                slide.className = `slide ${i === 0 ? 'active' : ''}`;
                 
                 if (art.isLogoSlide) {
-                    let logoGridHTML = '<div class="logo-grid-container">';
-                    art.logos.forEach(src => {
-                        if(src === "SITE_LOGO") {
-                            logoGridHTML += `<div class="logo-item"><div class="logo-circle" style="transform:scale(0.5); margin:0; background:var(--blue);"><span class="logo-text">כלכלה</span><div class="logo-sep"></div><span class="logo-sub">מהדרין</span></div></div>`;
-                        } else {
-                            logoGridHTML += `<div class="logo-item"><img src="${src}" alt="כשרות"></div>`;
-                        }
-                    });
-                    logoGridHTML += '</div>';
-                    slide.innerHTML = logoGridHTML + `<div class="slide-txt" style="background:rgba(255,255,255,0.85); height:auto; bottom:0; position:absolute; width:100%; padding:20px; flex-direction:row; justify-content:space-between; align-items:center;"><div><span class="sub-h" style="color:var(--blue)">מאמר ${art.id}</span><h3 style="margin:0; font-size:1.5rem;">${art.title}</h3></div><a href="${art.url}" class="btn-go">למאמר המלא</a></div>`;
+                    // יצירת שקופית לוגואים מיוחדת למאמר 16
+                    let logoHTML = '<div class="logo-grid">';
+                    art.logos.forEach(l => logoHTML += `<div class="logo-grid-item"><img src="${l}" alt="כשרות"></div>`);
+                    logoHTML += `<div class="logo-grid-item"><div class="logo-circle" style="transform:scale(0.6); background:var(--blue);"><span class="logo-text">כלכלה</span><div class="logo-sep"></div><span class="logo-sub">מהדרין</span></div></div>`;
+                    logoHTML += '</div>';
+                    
+                    slide.innerHTML = logoHTML + `
+                        <div class="slide-txt" style="background:rgba(0,0,0,0.6); height:auto; bottom:0; position:absolute; width:100%; padding:20px;">
+                            <span class="sub-h">מאמר ${art.id}</span>
+                            <h3 style="font-size:1.6rem;">${art.title}</h3>
+                            <a href="${art.url}" class="btn-go">למאמר המלא</a>
+                        </div>
+                    `;
                 } else {
-                    slide.innerHTML = `<div class="slide-img" style="background-image: url('${art.img}');"></div><div class="slide-txt"><span class="sub-h">מאמר ${art.id}</span><h3>${art.title}</h3><p>${art.desc}</p><a href="${art.url}" class="btn-go">למאמר המלא</a></div>`;
+                    slide.innerHTML = `
+                        <div class="slide-img" style="background-image: url('${art.img}');"></div>
+                        <div class="slide-txt">
+                            <span class="sub-h">הון והלכה | מאמר ${art.id}</span>
+                            <h3>${art.title}</h3>
+                            <p>${art.desc}</p>
+                            <a href="${art.url}" class="btn-go">למאמר המלא</a>
+                        </div>
+                    `;
                 }
                 slider.insertBefore(slide, slider.querySelector('.slider-ctrl'));
             }
@@ -271,18 +294,20 @@
         tickerList.innerHTML = tickerHTML + tickerHTML;
         fullList.innerHTML = fullHTML;
     }
+
     initContent();
 
     let slideIdx = 0;
     function showSlide(n) {
         const slides = document.querySelectorAll('.slide');
-        if (slides.length === 0) return;
         slides.forEach(s => s.classList.remove('active'));
         slideIdx = (n + slides.length) % slides.length;
         slides[slideIdx].classList.add('active');
     }
     function moveSlide(step) { showSlide(slideIdx + step); }
-    setInterval(() => moveSlide(1), 10000);
+    let autoSlide = setInterval(() => moveSlide(1), 8000);
+    slider.addEventListener('mouseenter', () => clearInterval(autoSlide));
+    slider.addEventListener('mouseleave', () => autoSlide = setInterval(() => moveSlide(1), 8000));
 
     function toggleArticles() {
         const div = document.getElementById('full-article-list');

@@ -8,26 +8,46 @@
         :root { --blue: #1a3c5e; --gold: #d4af37; --teal: #00c4cc; --light: #f4f7f6; --white: #ffffff; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--light); margin: 0; color: #333; line-height: 1.8; text-align: right; }
         header { background: var(--blue); color: white; padding: 30px; text-align: center; border-bottom: 5px solid var(--gold); }
+        
+        /* תפריט ניווט מורחב */
         nav { background: var(--white); padding: 15px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         nav a { margin: 0 15px; text-decoration: none; color: var(--blue); font-weight: bold; }
+        nav a:hover { color: var(--gold); }
+
         .container { display: flex; flex-wrap: wrap; padding: 30px 20px; max-width: 1200px; margin: auto; gap: 25px; }
         .main { flex: 3; background: white; padding: 40px; border-radius: 12px; border-right: 8px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .sidebar { flex: 1; min-width: 250px; }
-        .sidebar-box { background: var(--blue); color: white; padding: 20px; border-radius: 12px; }
+        
+        /* סרגל צד מעוצב */
+        .sidebar { flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 20px; }
+        .sidebar-box { background: var(--blue); color: white; padding: 20px; border-radius: 12px; border-right: 5px solid var(--gold); }
+        .sidebar-box h3 { color: var(--gold); margin-top: 0; }
+        .sidebar-box a { color: white; text-decoration: none; display: block; margin-bottom: 10px; font-weight: bold; }
+        .sidebar-box a:hover { color: var(--gold); }
+        
+        /* כפתור צור קשר */
+        .btn-contact { background: var(--gold); color: white !important; padding: 10px; text-align: center; border-radius: 5px; margin-top: 10px; }
+
         .info-box { background: #fdf2f2; border-right: 4px solid #c0392b; padding: 20px; margin: 25px 0; border-radius: 4px; }
         .red-alert { color: #c0392b; font-weight: bold; font-size: 1.4rem; margin-bottom: 20px; display: block; }
         .highlight-box { background: #f9f9f9; border: 1px solid #eee; padding: 20px; margin-top: 30px; border-radius: 8px; font-weight: 500; }
         h1, h3 { color: var(--blue); }
-        footer { text-align: center; padding: 30px; background: #333; color: #ccc; margin-top: 50px; }
+        footer { text-align: center; padding: 30px; background: #333; color: #ccc; margin-top: 50px; border-top: 5px solid var(--gold); }
     </style>
 </head>
 <body>
-<header><h1>הון והלכה</h1></header>
+
+<header>
+    <h1>הון והלכה</h1>
+</header>
+
 <nav>
     <a href="index.html">🏠 דף הבית</a>
+    <a href="index.html#about">אודות</a>
     <a href="index.html#articles">📚 מאמרים</a>
     <a href="mavo.html">📊 מבוא לשוק ההון</a>
+    <a href="contact.html">📞 צור קשר</a>
 </nav>
+
 <div class="container">
     <div class="main">
         <h1>למה בכלל צריך "מסלול כשר"? – עיקרי הבעיות ההלכתיות</h1>
@@ -70,14 +90,24 @@
 
         <p><strong>לסיכום:</strong> המסלול הכשר אינו רק "הידור", אלא צורך בסיסי לכל יהודי שרוצה שפרנסתו וכספו יהיו נקיים מכל חשש איסור.</p>
     </div>
+
     <aside class="sidebar">
         <div class="sidebar-box">
             <h3>ניווט מהיר</h3>
-            <p><a href="mavo.html" style="color:var(--gold); text-decoration:none;">• מבוא לשוק ההון</a></p>
-            <p><a href="index.html" style="color:var(--gold); text-decoration:none;">• חזרה לדף הבית</a></p>
+            <a href="mavo.html">• מבוא לשוק ההון</a>
+            <a href="index.html">• חזרה לדף הבית</a>
+            <a href="index.html#articles">• מאמרים נוספים</a>
+        </div>
+        
+        <div class="sidebar-box" style="background: #f9f9f9; color: #333; border-right-color: var(--blue);">
+            <h3 style="color: var(--blue);">צור קשר</h3>
+            <p style="font-size: 0.9rem;">יש לכם שאלה הלכתית על תיק ההשקעות?</p>
+            <a href="contact.html" class="btn-contact">פנייה למערכת</a>
         </div>
     </aside>
 </div>
-<footer>&copy; 2026 הון והלכה</footer>
+
+<footer>&copy; 2026 הון והלכה - כל הזכויות שמורות</footer>
+
 </body>
 </html>

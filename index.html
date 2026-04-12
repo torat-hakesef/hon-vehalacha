@@ -68,7 +68,7 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         
         .slide-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; }
-        .slide-img::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%); }
+        .slide-img::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to left, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 100%); }
 
         .slide-txt { position: relative; z-index: 2; width: 60%; height: 100%; padding: 50px; display: flex; flex-direction: column; justify-content: center; color: white; }
         .slide-txt h3 { color: var(--gold); font-size: 2.2rem; margin: 0 0 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
@@ -194,30 +194,25 @@
     <div class="legal" id="disclaimer">
         <strong>הבהרה חשובה:</strong> כל המידע המופיע באתר זה מובא למטרות אינפורמציה, הדרכה והעשרה בלבד, ואינו מהווה ייעוץ השקעות, המלצה לביצוע פעולה בניירות ערך או חוות דעת הלכתית סופית. אין לראות במידע זה תחליף לייעוץ מקצועי המותאם לנתוניו האישיים של כל אדם על ידי יועץ השקעות מוסמך או פסיקת רב מוסמך. המערכת אינה נושאת באחריות לכל נזק, הפסד או פגיעה שייגרמו כתוצאה מהסתמכות על התכנים באתר זה. ההשקעה בשוק ההון טומנת בחובה סיכון להפסד כספי.
     </div></footer><script>
-    // הגדרת כל המאמרים לפי הסדר המבוקש
     const articles = [
         { id: 1, title: "מבוא לשוק ההון", url: "mavo.html", desc: "הבסיס שכל משקיע חייב להכיר לפני הכניסה לעולם הבורסה.", img: "https://images.unsplash.com/photo-1611974717537-483584854552?q=80&w=1200" },
-        { id: 2, title: "למה צריך מסלול כשר?", url: "why-kosher.html", desc: "סקירה על הבעיות המצויות בהשקעות רגילות והפתרונות הקיימים.", img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200" },
+        { id: 2, title: "למה צריך מסלול כשר?", url: "why-kosher.html", desc: "סקירה על הבעיות המצויות בהשקעות רגילות והפתרונות הקיימים.", img: "https://images.unsplash.com/photo-1544640808-32ca72ac7f37?q=80&w=1200" },
         { type: "cat", title: "האם מותר לסחור בשוק ההון?" },
         { id: 3, title: "האם מותר לסחור? - הגדרת בעלות", url: "halacha-series-1.html", desc: "בחינת מעמד המשקיע כבעלים בחברה על פי ההלכה.", img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200" },
         { id: 4, title: "האם מותר לסחור? - רוב גויים", url: "halacha-series-2.html", desc: "המשמעות ההלכתית של השקעה בחברות שרוב בעליהן אינם יהודים.", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200" },
         { id: 5, title: "אג\"ח, מניות, מדדים יש הבדל", url: "bonds-stocks-diff.html", desc: "הבדלים מהותיים בין סוגי הנכסים השונים מבחינה הלכתית.", img: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1200" },
-        // מאמר 6: ספר קודש פתוח / טקסט עברי
-        { id: 6, title: "האם מותר לסחור? - שיטות הפוסקים", url: "halacha-series-3.html", desc: "סיכום דעות גדולי הפוסקים בדורנו בנושא השקעות.", img: "https://images.unsplash.com/photo-1614030616187-57896ffba75b?q=80&w=1200" },
+        { id: 6, title: "האם מותר לסחור? - שיטות הפוסקים", url: "halacha-series-3.html", desc: "סיכום דעות גדולי הפוסקים בדורנו בנושא השקעות.", img: "https://images.unsplash.com/photo-1574246604907-db69e30ddb97?q=80&w=1200" },
         { type: "cat", title: "פתרונות להלכה" },
-        { id: 7, title: "פתרונות: תעודות סל", url: "etf.html", desc: "כיצד פועלות תעודות הסל הכשרות ומה הפיקוח עליהן.", img: "https://images.unsplash.com/photo-1535320903710-d993d3d77d29?q=80&w=1200" },
+        { id: 7, title: "פתרונות: תעודות סל", url: "etf.html", desc: "כיצד פועלות תעודות הסל הכשרות ומה הפיקוח עליהן.", img: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200" },
         { id: 8, title: "פתרונות: חוזים עתידיים", url: "futures.html", desc: "היבטים הלכתיים במסחר בנגזרים וחוזים.", img: "https://images.unsplash.com/photo-1642388691910-6003e059497e?q=80&w=1200" },
         { id: 9, title: "פתרונות: אופציות", url: "options.html", desc: "האם מותר לקנות ולמכור אופציות ללא היתר עסקה?", img: "https://images.unsplash.com/photo-1611974717537-483584854552?q=80&w=1200" },
-        // תיקון מאמר 10: תמונה נקייה וממוקדת של חוזה ועט נובע בלבד, ללא הסחות דעת
         { id: 10, title: "היתר עסקה בקצרה", url: "heter-iska.html", desc: "מהו היתר עסקה ואיך הוא פותר בעיות של ריבית בהשקעות.", img: "https://images.unsplash.com/photo-1583521214690-73421a1829a9?q=80&w=1200" },
         { id: 11, title: "נדל\"ן מול שוק ההון – כל האמת", url: "realestate-vs-stocks.html", desc: "השוואה מפורטת בין השקעה בנכסים פיזיים לבורסה.", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200" },
         { id: 12, title: "מסחר בנדל\"ן דרך שוק ההון חלק א'", url: "re-trading-a.html", desc: "השקעה בקרנות ריט ומניות נדל\"ן.", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200" },
         { id: 13, title: "מסחר בנדל\"ן דרך שוק ההון חלק ב'", url: "re-trading-b.html", desc: "המשך הסקירה על מכשירי השקעה בנדל\"ן בורסאי.", img: "https://images.unsplash.com/photo-1460472178825-e51c0623be5f?q=80&w=1200" },
         { id: 14, title: "קרנות כספיות מול פקדונות", url: "funds-vs-deposits.html", desc: "היכן כדאי לשמור את הכסף הנזיל מבחינת תשואה והלכה.", img: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=1200" },
-        // מאמר 15: שולחן השראה, מחשב נייד פתוח עם גרפים, ללא אנשים וידיים
         { id: 15, title: "מדריך קניית קרן כספית בקלות", url: "buy-fund-easy.html", desc: "צעד אחר צעד לביצוע קנייה בחשבון הבנק או בבית השקעות.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200" },
-        // מאמר 16: התמונה הישנה של מאמר 15 (מסך עם גרפים ירוקים/אדומים)
-        { id: 16, title: "הבדלים בין הכשרויות", url: "kosher-diffs.html", desc: "הבנת רמות הפיקוח השונות של ועדי הכשרות בשוק ההון.", img: "https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1200" },
+        { id: 16, title: "הבדלים בין הכשרויות", url: "kosher-diffs.html", desc: "הבנת רמות הפיקוח השונות של ועדי הכשרות בשוק ההון.", img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200" },
         { id: 17, title: "כל הדרכים להשקעה במט\"ח", url: "forex-invest.html", desc: "הצמדה לדולר, אירו ומטבעות זרים בצורה כשרה.", img: "https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?q=80&w=1200" }
     ];
 

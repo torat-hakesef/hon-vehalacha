@@ -67,39 +67,23 @@
         .slider-box { position: relative; background: var(--blue-dark); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 40px; height: 450px; }
         .slide { display: none; height: 100%; width: 100%; position: relative; animation: fadeIn 0.5s; }
         .slide.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         
         .slide-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; }
         .slide-img::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%); }
-
-        /* תצוגת לוגואים מיוחדת למאמר 16 */
-        .logo-grid-container { 
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; 
-            padding: 40px; box-sizing: border-box; z-index: 1; background: #fdfdfd; 
-        }
-        .logo-item { 
-            background: white; border-radius: 10px; display: flex; align-items: center; 
-            justify-content: center; padding: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-            border: 1px solid #eee;
-        }
-        .logo-item img { max-width: 90%; max-height: 80%; object-fit: contain; }
 
         .slide-txt { position: relative; z-index: 2; width: 60%; height: 100%; padding: 50px; display: flex; flex-direction: column; justify-content: center; color: white; }
         .slide-txt h3 { color: var(--gold); font-size: 2.2rem; margin: 0 0 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         .slide-txt .sub-h { font-size: 0.9rem; color: #64ffda; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; font-weight: bold; }
         .slide-txt p { font-size: 1.1rem; margin-bottom: 25px; color: #f0f0f0; }
         
-        /* התאמת טקסט למקרה של רקע בהיר (לוגואים) */
-        .slide.light-bg .slide-txt { color: var(--blue-dark); }
-        .slide.light-bg .slide-txt p { color: #555; }
-        .slide.light-bg .slide-txt h3 { text-shadow: none; }
-
         .btn-go { background: var(--gold); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; align-self: flex-start; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .btn-go:hover { background: white; color: var(--blue-dark); }
         
         .slider-ctrl { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); padding: 0 15px; box-sizing: border-box; pointer-events: none; z-index: 3; }
         .arrow { background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.4); width: 45px; height: 45px; border-radius: 50%; cursor: pointer; pointer-events: auto; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
 
+        /* קוביות מדריך */
         .track-section { margin-bottom: 40px; }
         .track-head { background: var(--blue); color: white; padding: 12px 20px; border-radius: 8px; margin-bottom: 20px; font-weight: bold; }
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -110,7 +94,7 @@
         footer { background: var(--blue-dark); color: #bdc3c7; padding: 60px 20px; text-align: center; border-top: 5px solid var(--gold); margin-top: 50px; }
         .legal { max-width: 1000px; margin: 30px auto 0; font-size: 0.85rem; text-align: justify; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; }
 
-        @media (max-width: 900px) { .container { flex-direction: column; } .grid { grid-template-columns: 1fr; } .slide-txt { width: 100%; padding: 30px; text-align: center; } .btn-go { align-self: center; } .logo-grid-container { grid-template-columns: 1fr; overflow-y: auto; } }
+        @media (max-width: 900px) { .container { flex-direction: column; } .grid { grid-template-columns: 1fr; } .slide-txt { width: 100%; padding: 30px; text-align: center; } .btn-go { align-self: center; } }
     </style>
 </head>
 <body>
@@ -144,6 +128,7 @@
 </nav>
 
 <div class="container">
+
     <aside class="sidebar">
         <div class="widget">
             <div class="widget-title">מאמרים ומדריכים</div>
@@ -191,7 +176,7 @@
                     <a href="world.html" class="card"><h4>מדדים עולמיים</h4></a>
                 </div>
             </div>
-        </section>
+            </section>
     </main>
 </div>
 
@@ -204,7 +189,7 @@
 </footer>
 
 <script>
-    // רשימת המאמרים - לא השתנה כלום חוץ ממאמר 16
+    // הגדרת מאמרים עם תמונות מותאמות (ללא אנשים, ללא פסלים)
     const articles = [
         { id: 1, title: "מבוא לשוק ההון", url: "mavo.html", desc: "הבסיס שכל משקיע חייב להכיר לפני הכניסה לעולם הבורסה.", img: "https://images.unsplash.com/photo-1611974717537-483584854552?q=80&w=1200" },
         { id: 2, title: "למה צריך מסלול כשר?", url: "why-kosher.html", desc: "סקירה הלכתית על הבעיות המצויות בהשקעות ופתרונות הלימוד.", img: "https://images.unsplash.com/photo-1507733108721-447547437190?q=80&w=1200" },
@@ -223,22 +208,7 @@
         { id: 13, title: "מסחר בנדל\"ן דרך שוק ההון ב'", url: "re-trading-b.html", desc: "שילוב של נכסי נדל\"ן וגרפים פיננסיים במסחר בורסאי.", img: "https://images.unsplash.com/photo-1460472178825-e51c0623be5f?q=80&w=1200" },
         { id: 14, title: "קרנות כספיות מול פקדונות", url: "funds-vs-deposits.html", desc: "ניהול כספים נזילים בביטחון ובכשירות.", img: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=1200" },
         { id: 15, title: "מדריך קנייה בקלות", url: "buy-fund-easy.html", desc: "ביצוע פעולות בחשבון הבנק בשפה ברורה וממשק נקי.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200" },
-        
-        // כאן הוספתי את הלוגואים למאמר 16
-        { 
-            id: 16, 
-            title: "הבדלים בין הכשרויות", 
-            url: "kosher-diffs.html", 
-            desc: "הבנת רמות הפיקוח של ועדי הכשרות השונים בשילוב הלוגו שלנו.", 
-            isLogoSlide: true,
-            logos: [
-                "tshua.png",    // תשועה כהלכה
-                "vaad.png",     // ועד ההלכה
-                "badatz.png",   // בד"ץ העדה החרדית
-                "SITE_LOGO"     // לוגו האתר (ייווצר אוטומטית)
-            ]
-        },
-        
+        { id: 16, title: "הבדלים בין הכשרויות", url: "kosher-diffs.html", desc: "הבנת רמות הפיקוח של ועדי הכשרות השונים (תשועה, גלאט-הון).", img: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1200" },
         { id: 17, title: "השקעה במט\"ח", url: "forex-invest.html", desc: "שטרות שקלים, דולרים ומטבעות דיגיטליים על פי ההלכה.", img: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?q=80&w=1200" }
     ];
 
@@ -256,26 +226,9 @@
             } else {
                 tickerHTML += `<a href="${art.url}">${art.id}. ${art.title}</a>`;
                 fullHTML += `<li><a href="${art.url}">${art.title}</a></li>`;
-                
                 const slide = document.createElement('div');
-                slide.className = `slide ${i === 0 ? 'active' : ''} ${art.isLogoSlide ? 'light-bg' : ''}`;
-                
-                if (art.isLogoSlide) {
-                    // יצירת סלייד מיוחד ללוגואים
-                    let logoGridHTML = '<div class="logo-grid-container">';
-                    art.logos.forEach(src => {
-                        if(src === "SITE_LOGO") {
-                            logoGridHTML += `<div class="logo-item"><div class="logo-circle" style="transform:scale(0.6); margin:0; background:var(--blue);"><span class="logo-text">כלכלה</span><div class="logo-sep"></div><span class="logo-sub">מהדרין</span></div></div>`;
-                        } else {
-                            logoGridHTML += `<div class="logo-item"><img src="${src}" alt="כשרות"></div>`;
-                        }
-                    });
-                    logoGridHTML += '</div>';
-                    slide.innerHTML = logoGridHTML + `<div class="slide-txt" style="background:rgba(255,255,255,0.8); height:auto; bottom:0; position:absolute; width:100%; padding:20px; flex-direction:row; justify-content:space-between; align-items:center;"><div><span class="sub-h" style="color:var(--blue)">מאמר ${art.id}</span><h3 style="margin:0; font-size:1.5rem;">${art.title}</h3></div><a href="${art.url}" class="btn-go">למאמר המלא</a></div>`;
-                } else {
-                    slide.innerHTML = `<div class="slide-img" style="background-image: url('${art.img}');"></div><div class="slide-txt"><span class="sub-h">מאמר ${art.id}</span><h3>${art.title}</h3><p>${art.desc}</p><a href="${art.url}" class="btn-go">למאמר המלא</a></div>`;
-                }
-                
+                slide.className = `slide ${i === 0 ? 'active' : ''}`;
+                slide.innerHTML = `<div class="slide-img" style="background-image: url('${art.img}');"></div><div class="slide-txt"><span class="sub-h">מאמר ${art.id}</span><h3>${art.title}</h3><p>${art.desc}</p><a href="${art.url}" class="btn-go">למאמר המלא</a></div>`;
                 slider.insertBefore(slide, slider.querySelector('.slider-ctrl'));
             }
         });

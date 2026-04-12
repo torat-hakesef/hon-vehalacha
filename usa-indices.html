@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדדי ארה"ב כשרים | הון והלכה</title>
+    <style>
+        :root { --blue: #1a3c5e; --blue-dark: #0a192f; --gold: #d4af37; --white: #ffffff; --light: #f4f7f6; --text: #333; --green-kosher: #27ae60; --red-kosher: #c0392b; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--light); margin: 0; color: var(--text); line-height: 1.8; }
+        
+        header { background: var(--blue); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
+        nav { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; height: 55px; display: flex; align-items: center; justify-content: center; }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--blue); font-weight: bold; }
+        nav a:hover { color: var(--gold); }
+
+        .container { max-width: 1200px; margin: auto; padding: 30px 20px; display: flex; gap: 30px; flex-wrap: wrap; }
+        .main { flex: 3; background: white; padding: 40px; border-radius: 12px; border-right: 8px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.05); min-width: 60%; }
+        
+        /* סרגל צד */
+        .sidebar { flex: 1; display: flex; flex-direction: column; gap: 20px; min-width: 280px; }
+        .widget { background: var(--white); border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-right: 5px solid var(--blue); }
+        .widget-title { color: var(--blue); font-weight: bold; border-bottom: 2px solid var(--light); padding-bottom: 10px; margin-bottom: 15px; }
+
+        /* קופסת הבהרה */
+        .disclaimer-box { background: #e8f4f8; border-right: 4px solid var(--blue); padding: 20px; margin-bottom: 30px; border-radius: 4px; font-size: 0.95rem; }
+        
+        /* כפתורי הטאבים */
+        .tabs-container { display: flex; gap: 15px; margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 15px; }
+        .tab-btn { background: #eee; border: none; padding: 15px 30px; font-size: 1.2rem; font-weight: bold; color: #555; border-radius: 8px; cursor: pointer; transition: 0.3s; flex: 1; }
+        .tab-btn:hover { background: #ddd; }
+        .tab-btn.active { background: var(--blue); color: white; box-shadow: 0 4px 10px rgba(26,60,94,0.3); }
+
+        /* תוכן הטאבים והטבלאות */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .category-title { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 5px; margin-top: 40px; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { padding: 12px; border: 1px solid #ddd; text-align: right; }
+        th { background: var(--blue); color: white; width: 15%; }
+        td ul { margin: 0; padding-right: 20px; }
+        td li { margin-bottom: 8px; }
+
+        /* תגיות כשרות */
+        .k-tag { font-size: 0.8rem; padding: 2px 6px; border-radius: 4px; color: white; font-weight: bold; margin-right: 5px; display: inline-block; }
+        .k-green { background: var(--green-kosher); }
+        .k-red { background: var(--red-kosher); }
+
+        footer { background: var(--blue-dark); color: #bdc3c7; padding: 40px 20px; text-align: center; border-top: 5px solid var(--gold); margin-top: 50px; width: 100%; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 style="margin:0; font-size: 2.5rem;">הון והלכה</h1>
+    <p style="color: var(--gold); font-weight: bold;">השקעות במדדי ארה"ב - רשימת קרנות</p>
+</header>
+
+<nav>
+    <a href="index.html">🏠 דף הבית</a>
+    <a href="index.html#articles">📚 מאמרים</a>
+    <a href="mavo.html">📊 מבוא לשוק ההון</a>
+    <a href="usa-indices.html" style="color:var(--gold);">🇺🇸 מדדי ארה"ב</a>
+</nav>
+
+<div class="container">
+    <main class="main">
+        
+        <div class="disclaimer-box">
+            <strong style="color: var(--blue); font-size: 1.1rem;">הבהרה חשובה: יש לשים לב לסוגי הכשרויות</strong><br>
+            קיימים הבדלים משמעותיים בגישות הפסיקה בין ועדות הכשרות השונות בשוק ההון:<br>
+            בעוד ש<span class="k-tag k-green">גלאט הון</span> ו-<span class="k-tag k-green">העדה החרדית</span> <strong>לא מאשרים כלל</strong> החזקה ישירה של מניות (ומשקיעים דרך חוזים ומדדים סינתטיים כדי למנוע בעלות), גופי כשרות כגון <span class="k-tag k-red">תשואה כהלכה</span> ו-<span class="k-tag k-red">הרב דביר</span> מתירים החזקת מניות, אך מבצעים <strong>סינון אקטיבי</strong> של מניות האסורות לדעתם (כגון חברות המחללות שבת בפרהסיה או עוסקות באיסורים). <br>
+            <a href="why-kosher.html" style="color: var(--blue); font-weight: bold;">לקריאת המאמר המלא: למה צריך מסלול כשר? לחצו כאן</a>.
+        </div>
+
+        <div class="tabs-container">
+            <button class="tab-btn active" onclick="openTab('sp500', this)">מדד S&P 500</button>
+            <button class="tab-btn" onclick="openTab('nasdaq', this)">מדד Nasdaq 100</button>
+        </div>
+
+        <div id="sp500" class="tab-content active">
+            <h2>קרנות כשרות העוקבות אחר מדד S&P 500</h2>
+            
+            <h3 class="category-title">1. מסלול מנוטרל מט"ח (ללא חשיפה לדולר)</h3>
+            <table>
+                <tr>
+                    <th>קרנות סל (ETF)</th>
+                    <td>
+                        <ul>
+                            <li>קסם S&P 500 (1146604) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span> <span class="k-tag k-red">הרב דביר</span></li>
+                            <li>הראל סל S&P 500 (1149137) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span> <span class="k-tag k-red">הרב דביר</span></li>
+                            <li>מגדל סל S&P 500 (1150572) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span></li>
+                            <li>אי.בי.אי סל S&P 500 (1200435) - <span class="k-tag k-red">הרב דביר</span></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>קרנות מחקות</th>
+                    <td>
+                        <ul>
+                            <li>תכלית מחקה S&P 500 (5123161) - <span class="k-tag k-green">העדה החרדית</span></li>
+                            <li>מגדל מחקה S&P 500 (5125869) - <span class="k-tag k-green">העדה החרדית</span></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h3 class="category-title">2. מסלול לא מנוטרל (חשוף לדולר)</h3>
+            <table>
+                <tr>
+                    <th>קרנות סל (ETF)</th>
+                    <td>
+                        <ul>
+                            <li>תכלית סל S&P 500 (1144385) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span></li>
+                            <li>קסם S&P 500 (1146471) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span> <span class="k-tag k-red">הרב דביר</span></li>
+                            <li>הראל סל S&P 500 (1149020) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span> <span class="k-tag k-red">הרב דביר</span></li>
+                            <li>מור סל S&P 500 (1165810) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span></li>
+                            <li>פסגות (אי.בי.אי) S&P 500 (1148162) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span> <span class="k-tag k-red">הרב דביר</span></li>
+                            <li>איישרס iShares S&P 500 (1159250) - <span class="k-tag k-green">העדה החרדית</span></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>קרנות מחקות</th>
+                    <td>
+                        <ul>
+                            <li>תכלית מחקה S&P 500 (5122957) - <span class="k-tag k-green">העדה החרדית</span></li>
+                            <li>קסם מחקה S&P 500 (5124482) - <span class="k-tag k-green">העדה החרדית</span></li>
+                            <li>מגדל מחקה S&P 500 (5122627) - <span class="k-tag k-green">העדה החרדית</span></li>
+                            <li>אינווסקו S&P 500 (1183441) - <span class="k-tag k-red">תשואה כהלכה</span></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h3 class="category-title">3. מסלול נקוב בדולר</h3>
+            <table>
+                <tr>
+                    <th>קרנות סל (ETF)</th>
+                    <td>
+                        <ul>
+                            <li>הראל Htf S&P 500 (5118419) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span> <span class="k-tag k-red">הרב דביר</span></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>קרנות מחקות</th>
+                    <td>
+                        <ul>
+                            <li>לא נמצאו ברשימה קרנות מחקות נקובות בדולר.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="nasdaq" class="tab-content">
+            <h2>קרנות כשרות העוקבות אחר מדד נאסד"ק 100</h2>
+            
+            <h3 class="category-title">1. מסלול מנוטרל מט"ח (ללא חשיפה לדולר)</h3>
+            <table>
+                <tr>
+                    <th>קרנות סל (ETF)</th>
+                    <td>
+                        <ul>
+                            <li>קסם Nasdaq 100 (1146612) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span> <span class="k-tag k-red">הרב דביר</span></li>
+                            <li>הראל סל Nasdaq 100 (1149103) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span> <span class="k-tag k-red">הרב דביר</span></li>
+                            <li>תכלית סל Nasdaq 100 (1143734) - <span class="k-tag k-green">העדה החרדית</span></li>
+                            <li>אי.בי.אי. סל Nasdaq 100 (1200443) - <span class="k-tag k-red">הרב דביר</span></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>קרנות מחקות</th>
+                    <td>
+                        <ul>
+                            <li>מגדל מחקה Nasdaq 100 (5134549) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span></li>
+                            <li>מגדל מחקה Nasdaq 100 (1181445) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span></li>
+                            <li>הראל Htf Nasdaq 100 (5133574) - <span class="k-tag k-green">העדה החרדית</span> <span class="k-tag k-red">הרב דביר</span></li>
+                            <li>תכלית מחקה Nasdaq 100 (5123179) - <span class="k-tag k-green">העדה החרדית</span></li>
+                            <li>קסם מחקה Nasdaq 100 (5124516) - <span class="k-tag k-green">העדה החרדית</span></li>
+                            <li>מגדל מחקה Nasdaq 100 (5138524) - <span class="k-tag k-green">העדה החרדית</span></li>
+                            <li>מגדל משולבת 70% S&P ו-30% נאסד"ק (5136932) - <span class="k-tag k-green">העדה החרדית</span></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h3 class="category-title">2. מסלול לא מנוטרל (חשוף לדולר)</h3>
+            <table>
+                <tr>
+                    <th>קרנות סל (ETF)</th>
+                    <td>
+                        <ul>
+                            <li>קסם Nasdaq 100 (1146505) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span> <span class="k-tag k-red">הרב דביר</span></li>
+                            <li>הראל סל Nasdaq 100 (1149038) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span> <span class="k-tag k-red">הרב דביר</span></li>
+                            <li>תכלית סל Nasdaq 100 (1144401) - <span class="k-tag k-green">העדה החרדית</span></li>
+                            <li>אי.בי.אי. סל Nasdaq 100 (1200450) - <span class="k-tag k-red">הרב דביר</span></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>קרנות מחקות</th>
+                    <td>
+                        <ul>
+                            <li>מגדל מחקה Nasdaq 100 (1181387) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span></li>
+                            <li>מגדל מחקה Nasdaq 100 (5134531) - <span class="k-tag k-green">העדה החרדית, גלאט הון</span></li>
+                            <li>הראל Htf Nasdaq 100 (5129283) - <span class="k-tag k-green">העדה החרדית</span> <span class="k-tag k-red">הרב דביר</span></li>
+                            <li>תכלית מחקה Nasdaq 100 (5124532) - <span class="k-tag k-green">העדה החרדית</span></li>
+                            <li>קסם מחקה Nasdaq 100 (5128905) - <span class="k-tag k-green">העדה החרדית</span></li>
+                            <li>אינווסקו Nasdaq 100 (1186063) - <span class="k-tag k-red">תשואה כהלכה</span></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h3 class="category-title">3. מסלול נקוב בדולר</h3>
+            <table>
+                <tr>
+                    <td colspan="2" style="text-align: center;">בנתונים הקיימים כרגע לא הופיעו קרנות נאסד"ק ייעודיות הנקובות בדולר.</td>
+                </tr>
+            </table>
+        </div>
+
+    </main>
+
+    <aside class="sidebar">
+        <div class="widget">
+            <div class="widget-title">ניווט מהיר</div>
+            <ul style="list-style:none; padding:0;">
+                <li style="margin-bottom:10px;"><a href="why-kosher.html" style="color:var(--blue); text-decoration:none;">למה צריך מסלול כשר?</a></li>
+                <li style="margin-bottom:10px;"><a href="mavo.html" style="color:var(--blue); text-decoration:none;">📊 מבוא לשוק ההון</a></li>
+                <li style="margin-bottom:10px;"><a href="index.html" style="color:var(--blue); text-decoration:none;">🏠 חזרה לדף הבית</a></li>
+            </ul>
+        </div>
+
+        <div class="widget" style="background: #fdf2f2; border-right-color: var(--red-kosher);">
+            <div class="widget-title" style="color: var(--red-kosher);">שאלת רב</div>
+            <p style="font-size: 0.9rem;">מתלבטים איזו קרן לבחור מבחינה הלכתית? צרו קשר עם רבני המכון.</p>
+            <a href="contact.html" style="background: var(--red-kosher); color: white; padding: 10px; display: block; text-align: center; border-radius: 5px; text-decoration: none;">לפנייה לחצו כאן</a>
+        </div>
+    </aside>
+</div>
+
+<footer>
+    <strong>הון והלכה</strong>
+    <p>&copy; 2026 כלכלה מהדרין - כל הזכויות שמורות</p>
+</footer>
+
+<script>
+    // סקריפט להחלפת הטאבים בין המדדים
+    function openTab(tabId, btnElement) {
+        // הסתרת כל התוכן
+        var contents = document.getElementsByClassName("tab-content");
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].classList.remove("active");
+        }
+        // הסרת צבע כחול מכל הכפתורים
+        var btns = document.getElementsByClassName("tab-btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].classList.remove("active");
+        }
+        // הצגת התוכן הנבחר וצביעת הכפתור
+        document.getElementById(tabId).classList.add("active");
+        btnElement.classList.add("active");
+    }
+</script>
+
+</body>
+</html>
